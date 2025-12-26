@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Users, Ship, Plane, ShieldCheck, TrendingUp, Monitor, Phone, Warehouse, Truck, ClipboardCheck, Ticket, Languages, Globe, Map } from 'lucide-react';
 
+import Script from "next/script";
+
 export default function Home() {
   return (
     <>
+      <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
       {/* Hero Section */}
       <header className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -314,6 +317,117 @@ export default function Home() {
             <Link href="#" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
               <Phone size={20} /> 096-897-8719
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* RTB Section - TikTok Embed */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <span className="text-[#E53935] font-bold tracking-wider uppercase text-sm mb-2 block">
+              REAL REVIEWS & EXPERIENCES
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              อัปเดตบรรยากาศจริง <span className="text-[#E53935]">ผ่าน TikTok</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-10">
+              ชมคลิปวิดีโอผลงาน การขนส่งจริง และรีวิวจากลูกค้าตัวจริงบน TikTok ของเรา
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {/* TikTok Video 1 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+              <blockquote className="tiktok-embed"
+                cite="https://www.tiktok.com/@korkame19/video/7545742823274892551"
+                data-video-id="7545742823274892551"
+                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                <section>
+                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
+                </section>
+              </blockquote>
+            </div>
+
+            {/* TikTok Video 2 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+              <blockquote className="tiktok-embed"
+                cite="https://www.tiktok.com/@korkame19/photo/7448006782632381714"
+                data-video-id="7448006782632381714"
+                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                <section>
+                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
+                </section>
+              </blockquote>
+            </div>
+
+            {/* TikTok Video 3 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+              <blockquote className="tiktok-embed"
+                cite="https://www.tiktok.com/@korkame19/video/7582104724971801874"
+                data-video-id="7582104724971801874"
+                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                <section>
+                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
+                </section>
+              </blockquote>
+            </div>
+
+            {/* TikTok Video 4 */}
+            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+              <blockquote className="tiktok-embed"
+                cite="https://www.tiktok.com/@korkame19/video/7538064524864441607"
+                data-video-id="7538064524864441607"
+                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                <section>
+                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
+                </section>
+              </blockquote>
+            </div>
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="https://www.tiktok.com/@korkame19" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-gray-900 border-b-2 border-[#E53935] pb-0.5 hover:text-[#E53935] transition-colors font-bold">
+              ดูวิดีโอทั้งหมดบน TikTok <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Keyword Section */}
+      <section className="bg-white py-24 relative overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Top Decorative Line */}
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-32"></div>
+              <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-32"></div>
+            </div>
+
+            <div className="mb-10 relative inline-block group">
+              {/* Badge with Gradient & Shadow */}
+              <span className="relative z-10 inline-flex items-center gap-2 bg-gradient-to-r from-[#E53935] to-[#D32F2F] text-white px-8 py-3 text-lg font-bold rounded-full shadow-lg shadow-red-100 uppercase transform group-hover:scale-105 transition-all duration-300 ring-4 ring-white">
+                PR GLOBAL GROUP
+              </span>
+              {/* Glow underlying effect */}
+              <div className="absolute -inset-1 bg-red-500 blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
+            </div>
+
+            <h3 className="text-3xl md:text-5xl font-bold text-gray-900 leading-normal mb-4">
+              หากคุณมีไอเดียทริปในใจ <span className="text-gray-500 font-normal">แต่ยังไม่รู้จะเริ่มอย่างไร</span>
+            </h3>
+            <p className="text-2xl md:text-3xl font-bold text-[#E53935] leading-relaxed">
+              ให้ทีมงาน PRGB ช่วยออกแบบทริปให้คุณได้
+            </p>
+
+            {/* Bottom Decorative Line */}
+            <div className="flex items-center justify-center gap-4 mt-12">
+              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-full max-w-sm"></div>
+            </div>
           </div>
         </div>
       </section>
