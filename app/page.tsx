@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* SECTION 2: PR CARGO - HIGHLIGHTS */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 rounded-full bg-red-100 text-[#E53935] text-sm font-bold mb-4">
               IMPORT SERVICES
@@ -81,7 +81,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto mb-16">
             {/* Cargo Card 1 */}
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden">
               <div className="absolute top-0 left-0 w-2 h-full bg-[#E53935] opacity-0 group-hover:opacity-100 transition-all"></div>
@@ -123,8 +123,8 @@ export default function Home() {
 
       {/* SECTION 3: PR CARGO - WHY CHOOSE (CONFIDENCE) */}
       <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 mx-auto">
             <div className="w-full md:w-1/2">
               <h3 className="text-3xl font-bold mb-6 text-gray-900">
                 ทำไมต้องนำเข้ากับ <span className="text-[#E53935]">PR CARGO?</span>
@@ -183,7 +183,7 @@ export default function Home() {
         {/* Decorative BG pattern */}
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur text-[#E53935] border border-[#E53935] text-sm font-bold mb-4">
               TRAVEL & BUSINESS
@@ -196,7 +196,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
             {/* Travel Service 1 */}
             <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors group">
               <div className="w-14 h-14 bg-[#E53935] rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -238,8 +238,8 @@ export default function Home() {
 
       {/* SECTION 5: PR TRAVEL - WHY CHOOSE (EXPERIENCE) */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 mx-auto">
             <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
               <img
                 src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop"
@@ -307,7 +307,7 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-20 bg-[#E53935] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">พร้อมยกระดับธุรกิจของคุณหรือยัง?</h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">ปรึกษาเราวันนี้ เพื่อรับข้อเสนอและบริการที่ดีที่สุดสำหรับการนำเข้าและการเดินทางของคุณ</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -323,7 +323,7 @@ export default function Home() {
 
       {/* RTB Section - TikTok Embed */}
       <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-10">
             <span className="text-[#E53935] font-bold tracking-wider uppercase text-sm mb-2 block">
               REAL REVIEWS & EXPERIENCES
@@ -336,13 +336,13 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
             {/* TikTok Video 1 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
               <blockquote className="tiktok-embed"
                 cite="https://www.tiktok.com/@korkame19/video/7545742823274892551"
                 data-video-id="7545742823274892551"
-                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
                 <section>
                   <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
                 </section>
@@ -350,11 +350,11 @@ export default function Home() {
             </div>
 
             {/* TikTok Video 2 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
               <blockquote className="tiktok-embed"
                 cite="https://www.tiktok.com/@korkame19/photo/7448006782632381714"
                 data-video-id="7448006782632381714"
-                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
                 <section>
                   <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
                 </section>
@@ -362,11 +362,11 @@ export default function Home() {
             </div>
 
             {/* TikTok Video 3 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
               <blockquote className="tiktok-embed"
                 cite="https://www.tiktok.com/@korkame19/video/7582104724971801874"
                 data-video-id="7582104724971801874"
-                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
                 <section>
                   <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
                 </section>
@@ -374,11 +374,11 @@ export default function Home() {
             </div>
 
             {/* TikTok Video 4 */}
-            <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200 aspect-[9/16] relative group flex items-center justify-center">
+            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
               <blockquote className="tiktok-embed"
                 cite="https://www.tiktok.com/@korkame19/video/7538064524864441607"
                 data-video-id="7538064524864441607"
-                style={{ maxWidth: "605px", minWidth: "325px" }}>
+                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
                 <section>
                   <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
                 </section>
@@ -399,7 +399,7 @@ export default function Home() {
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             {/* Top Decorative Line */}
             <div className="flex items-center justify-center gap-4 mb-12">
