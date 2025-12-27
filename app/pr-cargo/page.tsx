@@ -39,7 +39,7 @@ export default function PrCargoPage() {
                         {/* Service 2: Ship */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <img src="/icon-transport.png" alt="Transport Icon" width={130} height={130} className="object-contain" />
+                                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/icon-transport.png`} alt="Transport Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">ขนส่งทางเรือ</h3>
                             <p className="text-[#1F2937]">ประหยัดต้นทุน เหมาะกับสินค้าจำนวนมาก ปิดตู้เหมา (FCL) หรือฝากส่ง (LCL)</p>
@@ -48,7 +48,7 @@ export default function PrCargoPage() {
                         {/* Service 3: Customs */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <img src="/icon-tax.png" alt="Tax Icon" width={130} height={130} className="object-contain" />
+                                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/icon-tax.png`} alt="Tax Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">พิธีการศุลกากร</h3>
                             <p className="text-[#1F2937]">ดูแลเอกสารนำเข้า-ส่งออก และเคลียร์ภาษีอย่างถูกต้องครบถ้วน</p>
@@ -57,7 +57,7 @@ export default function PrCargoPage() {
                         {/* Service 4: Warehouse */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <img src="/icon-warehouse.png" alt="Warehouse Icon" width={130} height={130} className="object-contain" />
+                                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/icon-warehouse.png`} alt="Warehouse Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">โกดังพักสินค้า</h3>
                             <p className="text-[#1F2937]">มีจุดรับสินค้าขนาดใหญ่ทั้งที่กวางโจวและกรุงเทพฯ พร้อมระบบจัดการสต็อก</p>
