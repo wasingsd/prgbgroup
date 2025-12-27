@@ -28,7 +28,7 @@ const Navbar = () => {
   const isHome = pathname === '/';
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || !isHome ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || !isHome ? 'bg-white border-b border-gray-200 py-3' : 'bg-transparent py-5'}`}>
       <div className="container mx-auto px-4 md:px-6 max-w-6xl flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
