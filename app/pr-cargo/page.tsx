@@ -201,7 +201,7 @@ export default function PrCargoPage() {
 
                             <div className="relative z-10 hover:scale-105 transition-transform duration-500 drop-shadow-2xl">
                                 <img
-                                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/Icon รถ_edited.png`}
+                                    src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/icon-truck-custom.png`}
                                     alt="PR Cargo Truck Delivery"
                                     className="w-full max-w-sm lg:max-w-md object-contain"
                                 />
