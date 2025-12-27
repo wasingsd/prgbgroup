@@ -2,9 +2,9 @@ import { Plane, ChevronRight } from 'lucide-react';
 
 export default function PrTravelPage() {
     return (
-        <div className="pt-20">
+        <div>
             {/* Travel Hero */}
-            <div className="bg-gradient-to-r from-footer-start to-footer-end text-white py-20 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1547980846-953e5d070b49?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-40" alt="Travel China" />
                 </div>

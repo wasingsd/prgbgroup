@@ -2,8 +2,8 @@ import { MapPin, Phone, Mail, Clock, Globe } from 'lucide-react';
 
 export default function ContactPage() {
     return (
-        <div className="pt-20 bg-soft-bg min-h-screen">
-            <div className="bg-primary text-white py-16">
+        <div className="bg-soft-bg min-h-screen">
+            <div className="bg-primary text-white pt-32 pb-16">
                 <div className="container mx-auto px-4 text-center">
                     <h1 className="text-4xl font-bold mb-4">ติดต่อเรา</h1>
                     <p className="text-white/90">ทีมงานพร้อมให้คำปรึกษาและช่วยเหลือคุณ</p>
