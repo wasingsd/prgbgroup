@@ -113,11 +113,14 @@
     }
   },
   "contact": {
-    "phone_cargo": "",
-    "phone_travel": "",
-    "email_cargo": "",
-    "email_travel": "",
-    "line_oa": "",
+    "phone_cargo": "096-897-8719",
+    "phone_travel": "096-897-8719",
+    "email_cargo": "support@prgbgroup.com",
+    "email_travel": "support@prgbgroup.com",
+    "email_general": "support@prgbgroup.com",
+    "line_oa": "@prcargo",
+    "facebook": "PR Cargo",
+    "facebook_url": "https://www.facebook.com/PRCargo",
     "address": "",
     "working_hours": "จันทร์ - ศุกร์ 09:00 - 18:00"
   },
@@ -129,3 +132,92 @@
     "typography": "Prompt"
   }
 }
+
+# PR Global Group – Brand Color Theme
+
+## Brand Concept
+Professional • Trust • Logistics • International  
+โทนสีสะท้อนความมั่นใจ ความรวดเร็ว และความน่าเชื่อถือ
+
+---
+
+## Primary Color (สีหลัก)
+**PR Red**
+- Hex: `#E53935`
+- Usage:
+  - Hero Banner
+  - CTA หลัก (ขอใบเสนอราคา / ติดต่อเรา)
+  - Header / Footer
+  - Highlight คำสำคัญ (จีน–ไทย)
+- Meaning: พลัง ความมั่นใจ ความเป็นมืออาชีพ
+
+---
+
+## Secondary Color (สีรอง)
+**Pure White**
+- Hex: `#FFFFFF`
+- Usage:
+  - พื้นหลังเว็บไซต์
+  - Card / Content Box
+  - พื้นที่อ่านเนื้อหา
+- Meaning: โปร่งใส สะอาด น่าเชื่อถือ
+
+---
+
+## Text Colors
+**Primary Text**
+- Hex: `#1F2937`
+- Usage: Body text, Headline, Navigation
+
+**Secondary Text**
+- Hex: `#6B7280`
+- Usage: Description, Subtext, Footer text
+
+---
+
+## Soft Background Color
+**Soft Pink / Light Red**
+- Hex: `#FDECEC`
+- Usage:
+  - Section คั่น (About / Why Us)
+  - Background เสริม
+- Purpose: ลดความแข็งของสีแดง ทำให้เว็บสบายตา
+
+---
+
+## Accent Color (Status / Trust)
+**Success Green**
+- Hex: `#16A34A`
+- Usage:
+  - Icon ✔
+  - ข้อความความน่าเชื่อถือ (ปลอดภัย / สำเร็จ)
+  - Trust Badge
+
+---
+
+## Optional Accent (Travel Section)
+**Sky Blue**
+- Hex: `#2563EB`
+- Usage:
+  - Section PR TRAVEL
+  - ปุ่มรองในหน้าท่องเที่ยว
+- Purpose: แยกอารมณ์ Travel ออกจาก Logistics
+
+---
+
+## Color Hierarchy Summary
+- Primary: `#E53935`
+- Secondary: `#FFFFFF`
+- Text Main: `#1F2937`
+- Text Sub: `#6B7280`
+- Soft BG: `#FDECEC`
+- Accent: `#16A34A`
+- Travel Accent: `#2563EB`
+
+---
+
+## Design Notes
+- CTA หลักใช้พื้นแดง + ตัวอักษรขาว
+- ปุ่มรองใช้ขอบแดง / ข้อความแดง
+- Footer แนะนำ Gradient แดงเข้ม
+- Card ใช้พื้นขาว + Shadow เบา

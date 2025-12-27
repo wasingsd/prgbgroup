@@ -2,9 +2,18 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1F2937;
   --primary: #E53935;
   --primary-hover: #D32F2F;
+  --secondary: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --soft-bg: #FDECEC;
+  --accent: #16A34A;
+  --accent-travel: #2563EB;
+  /* Footer Gradient - Dark Red */
+  --footer-start: #B71C1C;
+  --footer-end: #880E4F;
 }
 
 @theme inline {
@@ -12,6 +21,14 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-soft-bg: var(--soft-bg);
+  --color-accent: var(--accent);
+  --color-accent-travel: var(--accent-travel);
+  --color-footer-start: var(--footer-start);
+  --color-footer-end: var(--footer-end);
   --font-sans: var(--font-prompt);
 }
 

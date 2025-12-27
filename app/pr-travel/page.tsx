@@ -4,19 +4,19 @@ export default function PrTravelPage() {
     return (
         <div className="pt-20">
             {/* Travel Hero */}
-            <div className="bg-gray-900 text-white py-20 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-footer-start to-footer-end text-white py-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1547980846-953e5d070b49?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-40" alt="Travel China" />
                 </div>
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="flex items-center gap-3 mb-4 text-[#E53935] font-bold">
-                        <Plane size={24} /> <span>PR TRAVEL</span>
+                    <div className="flex items-center gap-3 mb-4 text-primary font-bold bg-white/10 w-fit px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
+                        <Plane size={24} className="text-white" /> <span className="text-white">PR TRAVEL</span>
                     </div>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">เปิดประสบการณ์ใหม่ <br />ทุกการเดินทาง</h1>
-                    <p className="text-xl text-gray-200 max-w-2xl mb-8">
+                    <p className="text-xl text-white/80 max-w-2xl mb-8">
                         บริการจัดกรุ๊ปทัวร์ส่วนตัว ทัวร์ดูงาน และเส้นทางท่องเที่ยว Unseen ในจีน ดูแลดุจญาติมิตร โดยทีมงานมืออาชีพ
                     </p>
-                    <button className="bg-[#E53935] hover:bg-[#c62828] text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                    <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-bold transition-colors">
                         ออกแบบทริปของคุณ
                     </button>
                 </div>
@@ -25,8 +25,8 @@ export default function PrTravelPage() {
             {/* Tour Types */}
             <section className="py-20 bg-white">
                 <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-center mb-6">รูปแบบการเดินทาง</h2>
-                    <p className="text-center text-gray-500 mb-12 max-w-2xl mx-auto">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
+                    <h2 className="text-3xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
+                    <p className="text-center text-[#1F2937] mb-12 max-w-2xl mx-auto">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
@@ -57,9 +57,9 @@ export default function PrTravelPage() {
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                                 </div>
                                 <div className="p-6 bg-white relative">
-                                    <h3 className="text-xl font-bold mb-2">{tour.title}</h3>
-                                    <p className="text-gray-500 mb-4 text-sm h-10">{tour.desc}</p>
-                                    <div className="flex items-center text-[#E53935] font-medium text-sm cursor-pointer hover:underline">
+                                    <h3 className="text-xl font-bold mb-2 text-[#1F2937]">{tour.title}</h3>
+                                    <p className="text-[#1F2937] mb-4 text-sm h-10">{tour.desc}</p>
+                                    <div className="flex items-center text-primary font-medium text-sm cursor-pointer hover:underline">
                                         ดูรายละเอียด <ChevronRight size={16} />
                                     </div>
                                 </div>
@@ -70,11 +70,11 @@ export default function PrTravelPage() {
             </section>
 
             {/* Gallery / Reviews */}
-            <section className="py-20 bg-gray-50">
+            <section className="py-20 bg-soft-bg">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-between mb-8">
-                        <h2 className="text-3xl font-bold">บรรยากาศการเดินทาง</h2>
-                        <button className="text-[#E53935] font-bold border border-[#E53935] px-4 py-2 rounded-lg hover:bg-[#E53935] hover:text-white transition-colors text-sm">ดูทั้งหมด</button>
+                        <h2 className="text-3xl font-bold text-[#1F2937]">บรรยากาศการเดินทาง</h2>
+                        <button className="text-primary font-bold border border-primary px-4 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors text-sm">ดูทั้งหมด</button>
                     </div>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {[1, 2, 3, 4].map((item) => (

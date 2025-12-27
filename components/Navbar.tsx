@@ -29,11 +29,11 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || !isHome ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer">
-          <div className="w-10 h-10 bg-[#E53935] rounded flex items-center justify-center text-white font-bold text-xl">PR</div>
-          <div className={`font-bold text-xl tracking-tight leading-tight ${isScrolled || !isHome ? 'text-gray-900' : 'text-white drop-shadow-md'}`}>
+          <div className="w-10 h-10 bg-primary rounded flex items-center justify-center text-white font-bold text-xl">PR</div>
+          <div className={`font-bold text-xl tracking-tight leading-tight ${isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-md'}`}>
             PR GLOBAL <br /><span className="text-sm font-normal">GROUP</span>
           </div>
         </Link>
@@ -44,21 +44,21 @@ const Navbar = () => {
             <Link
               key={item.href}
               href={item.href}
-              className={`text-sm font-bold hover:text-[#E53935] transition-colors ${pathname === item.href ? 'text-[#E53935]' :
-                  (isScrolled || !isHome ? 'text-gray-700' : 'text-white drop-shadow-sm')
+              className={`text-sm font-bold hover:text-primary transition-colors ${pathname === item.href ? 'text-primary' :
+                (isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-sm')
                 }`}
             >
               {item.label}
             </Link>
           ))}
-          <button className="bg-[#E53935] hover:bg-[#d32f2f] text-white px-5 py-2 rounded-full font-medium transition-all shadow-md text-sm">
+          <button className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-full font-medium transition-all shadow-md text-sm">
             ขอใบเสนอราคา
           </button>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden ${isScrolled || !isHome ? 'text-[#E53935]' : 'text-white'}`}
+          className={`md:hidden ${isScrolled || !isHome ? 'text-primary' : 'text-white'}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -74,12 +74,12 @@ const Navbar = () => {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left font-medium py-2 border-b border-gray-100 ${pathname === item.href ? 'text-[#E53935]' : 'text-gray-800'}`}
+                className={`text-left font-medium py-2 border-b border-gray-100 ${pathname === item.href ? 'text-primary' : 'text-[#1F2937]'}`}
               >
                 {item.label}
               </Link>
             ))}
-            <button className="bg-[#E53935] text-white w-full py-3 rounded-lg font-bold">
+            <button className="bg-primary text-white w-full py-3 rounded-lg font-bold">
               ขอใบเสนอราคา
             </button>
           </div>

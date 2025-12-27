@@ -92,6 +92,14 @@ export const siteContent = {
     contact: {
         title: "ติดต่อสอบถาม",
         description: "เริ่มต้นง่าย มีทีมให้คำปรึกษาฟรี ติดต่อเราได้ทุกช่องทาง",
+        contactInfo: {
+            email: "support@prgbgroup.com",
+            phone: "096-897-8719",
+            line: "@prcargo",
+            facebook: "PR Cargo",
+            facebookUrl: "https://www.facebook.com/PRCargo",
+            workingHours: "จันทร์ - ศุกร์ 09:00 - 18:00"
+        },
         form: {
             firstName: "ชื่อ",
             lastName: "นามสกุล",
