@@ -9,7 +9,7 @@ export default function PrCargoPage() {
                 <div className="absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-20" alt="Cargo Container" />
                 </div>
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="container mx-auto px-8 relative z-10">
                     <div className="flex items-center gap-3 mb-4 text-primary font-bold bg-white/10 w-fit px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
                         <Ship size={24} className="text-white" /> <span className="text-white">PR CARGO</span>
                     </div>
@@ -29,7 +29,7 @@ export default function PrCargoPage() {
 
 
             <section className="py-20 bg-white">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <div className="container mx-auto px-8 max-w-6xl">
                     <h2 className="text-3xl font-bold text-center mb-12 text-[#1F2937]">บริการของเรา</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Service 1: Truck */}
@@ -73,7 +73,7 @@ export default function PrCargoPage() {
 
             {/* Pricing Tables */}
             <section className="py-20 bg-soft-bg">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <div className="container mx-auto px-8 max-w-6xl">
                     <div className="text-center mb-12">
                         <span className="inline-block py-1 px-3 rounded-full bg-red-100 text-primary text-sm font-bold mb-4">
                             ตารางค่าบริการ
@@ -184,7 +184,7 @@ export default function PrCargoPage() {
 
             {/* Process Redesigned */}
             <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-                <div className="container mx-auto px-4 max-w-6xl">
+                <div className="container mx-auto px-8 max-w-6xl">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] mb-6">
                             ขั้นตอนสั่งของกับ <span className="text-primary">PR CARGO</span>
@@ -268,7 +268,7 @@ export default function PrCargoPage() {
 
             {/* Platform Showcase (Sliding) */}
             <section className="py-20 bg-white border-t border-gray-100 overflow-hidden">
-                <div className="container mx-auto px-4 text-center mb-12">
+                <div className="container mx-auto px-8 text-center mb-12">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-4">รองรับทุกแพลตฟอร์มชั้นนำจากจีน</h2>
                 </div>
 
