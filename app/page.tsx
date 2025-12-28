@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle, Users, Ship, Plane, ShieldCheck, TrendingUp, M
 import Script from "next/script";
 
 export default function Home() {
+  const prefix = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <>
       <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
@@ -67,7 +68,7 @@ export default function Home() {
       </header>
 
       {/* SECTION 2: PR CARGO - HIGHLIGHTS */}
-      <section className="py-20 bg-soft-bg">
+      <section className="py-20 bg-soft-bg relative z-10">
         <div className="container mx-auto px-8 md:px-6 max-w-6xl">
           <div className="text-center mb-16">
             <span className="inline-block py-1 px-3 rounded-full bg-red-100 text-primary text-sm font-bold mb-4">
@@ -86,7 +87,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <img src="/prgbgroup/icon-transport.png" alt="Transport Icon" width={150} height={150} className="object-contain" />
+                <img src={`${prefix}/icon-transport.png`} alt="Transport Icon" width={150} height={150} className="object-contain" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">ขนส่งด่วน ทางรถ/เรือ</h3>
               <p className="text-[#1F2937] opacity-80">
@@ -98,7 +99,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <img src="/prgbgroup/icon-tax.png" alt="Tax Icon" width={150} height={150} className="object-contain" />
+                <img src={`${prefix}/icon-tax.png`} alt="Tax Icon" width={150} height={150} className="object-contain" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">เคลียร์ภาษี แบบเหมา</h3>
               <p className="text-[#1F2937] opacity-80">
@@ -110,7 +111,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <img src="/prgbgroup/icon-warehouse.png" alt="Warehouse Icon" width={150} height={150} className="object-contain" />
+                <img src={`${prefix}/icon-warehouse.png`} alt="Warehouse Icon" width={150} height={150} className="object-contain" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">โกดังพักสินค้า 2 ประเทศ</h3>
               <p className="text-[#1F2937] opacity-80">
@@ -122,7 +123,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: PR CARGO - WHY CHOOSE (CONFIDENCE) */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white relative z-10">
         <div className="container mx-auto px-8 md:px-6 max-w-6xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-12 mx-auto">
             <div className="w-full md:w-1/2">
