@@ -5,6 +5,8 @@ import ServicePremium from '@/app/assets/images/service-premium.jpg';
 import ServiceDesign from '@/app/assets/images/service-design.jpg';
 import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
 import ServiceCar from '@/app/assets/images/service-car-new.jpg';
+import TravelMascot from '@/app/assets/images/travel-mascot.png';
+import BusinessMascot from '@/app/assets/images/mascot-business.png';
 
 export default function PrTravelPage() {
     return (
@@ -13,7 +15,7 @@ export default function PrTravelPage() {
             <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src={getImagePath("/travel-mascot.png")}
+                        src={TravelMascot}
                         alt="Travel China Banner"
                         fill
                         priority
@@ -42,7 +44,7 @@ export default function PrTravelPage() {
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
                 <div className="absolute top-10 right-0 md:right-20 w-32 md:w-48 opacity-100 z-10 pointer-events-none hidden lg:block">
-                    <Image src={getImagePath("/mascot-business.png")} alt="Business Mascot" width={200} height={300} className="w-full h-auto" />
+                    <Image src={BusinessMascot} alt="Business Mascot" width={200} height={300} className="w-full h-auto" />
                 </div>
                 <div className="container mx-auto px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
@@ -110,7 +112,7 @@ export default function PrTravelPage() {
                 <div className="container mx-auto px-8 max-w-6xl">
                     <div className="flex items-center gap-3 mb-8">
                         <MapPin className="text-red-500 fill-red-100" size={32} />
-                        <h2 className="text-3xl font-bold text-[#1F2937]">สถานที่ท่องเที่ยวยอดนิยม</h2>
+                        <h2 className="text-xl md:text-3xl font-bold text-[#1F2937] whitespace-nowrap">สถานที่ท่องเที่ยวยอดนิยม</h2>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]">
@@ -162,27 +164,15 @@ export default function PrTravelPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                                 <span className="absolute bottom-6 left-6 text-white text-2xl font-bold drop-shadow-md">ปักกิ่ง</span>
                             </div>
-                            <div className="flex flex-col md:flex-row gap-4 h-full md:h-1/2">
-                                <div className="relative h-64 md:h-full w-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop"
-                                        alt="Chongqing"
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                                    <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">ฉงชิ่ง</span>
-                                </div>
-                                <div className="relative h-64 md:h-full w-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
-                                    <Image
-                                        src="https://images.unsplash.com/photo-1504229986326-f4c0ce3b7080?q=80&w=1974&auto=format&fit=crop"
-                                        alt="Kunming"
-                                        fill
-                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                                    <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">คุนหมิง</span>
-                                </div>
+                            <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Chongqing"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">ฉงชิ่ง</span>
                             </div>
                         </div>
                     </div>
