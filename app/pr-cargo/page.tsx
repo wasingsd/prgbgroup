@@ -3,6 +3,27 @@ import Image from 'next/image';
 
 
 import { getImagePath } from '@/app/utils/path';
+import IconTruck from '@/app/assets/images/icon-truck-custom.png';
+import IconTransport from '@/app/assets/images/icon-transport.png';
+import IconTax from '@/app/assets/images/icon-tax.png';
+import IconWarehouse from '@/app/assets/images/icon-warehouse.png';
+import MascotLaptop from '@/app/assets/images/mascot-laptop.png';
+
+import Platform1 from '@/app/assets/images/platform-1.png';
+import Platform2 from '@/app/assets/images/platform-2.png';
+import Platform3 from '@/app/assets/images/platform-3.png';
+import Platform4 from '@/app/assets/images/platform-4.png';
+import Platform5 from '@/app/assets/images/platform-5.png';
+import Platform6 from '@/app/assets/images/platform-6.png';
+import Platform7 from '@/app/assets/images/platform-7.png';
+import Platform8 from '@/app/assets/images/platform-8.png';
+import Platform9 from '@/app/assets/images/platform-9.png';
+import Platform10 from '@/app/assets/images/platform-10.png';
+
+const PlatformImages = [
+    Platform1, Platform2, Platform3, Platform4, Platform5,
+    Platform6, Platform7, Platform8, Platform9, Platform10
+];
 
 export default function PrCargoPage() {
     return (
@@ -38,7 +59,7 @@ export default function PrCargoPage() {
                         {/* Service 1: Truck */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <Image src={getImagePath("/icon-truck-custom.png")} alt="Truck Icon" width={130} height={130} className="object-contain" />
+                                <Image src={IconTruck} alt="Truck Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">ขนส่งทางรถ</h3>
                             <p className="text-[#1F2937]">รวดเร็วทันใจ เหมาะกับสินค้าด่วน ใช้เวลาเพียง 3-5 วัน</p>
@@ -47,7 +68,7 @@ export default function PrCargoPage() {
                         {/* Service 2: Ship */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <Image src={getImagePath("/icon-transport.png")} alt="Transport Icon" width={130} height={130} className="object-contain" />
+                                <Image src={IconTransport} alt="Transport Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">ขนส่งทางเรือ</h3>
                             <p className="text-[#1F2937]">ประหยัดต้นทุน เหมาะกับสินค้าจำนวนมาก ปิดตู้เหมา (FCL) หรือฝากส่ง (LCL)</p>
@@ -56,7 +77,7 @@ export default function PrCargoPage() {
                         {/* Service 3: Customs */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <Image src={getImagePath("/icon-tax.png")} alt="Tax Icon" width={130} height={130} className="object-contain" />
+                                <Image src={IconTax} alt="Tax Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">พิธีการศุลกากร</h3>
                             <p className="text-[#1F2937]">ดูแลเอกสารนำเข้า-ส่งออก และเคลียร์ภาษีอย่างถูกต้องครบถ้วน</p>
@@ -65,7 +86,7 @@ export default function PrCargoPage() {
                         {/* Service 4: Warehouse */}
                         <div className="p-6 border border-gray-100 rounded-xl hover:shadow-lg transition-all hover:border-primary/30 group flex flex-col items-center text-center h-full">
                             <div className="mb-6 group-hover:scale-110 transition-transform">
-                                <Image src={getImagePath("/icon-warehouse.png")} alt="Warehouse Icon" width={130} height={130} className="object-contain" />
+                                <Image src={IconWarehouse} alt="Warehouse Icon" width={130} height={130} className="object-contain" />
                             </div>
                             <h3 className="text-xl font-bold mb-3 text-[#1F2937]">โกดังพักสินค้า</h3>
                             <p className="text-[#1F2937]">มีจุดรับสินค้าขนาดใหญ่ทั้งที่กวางโจวและกรุงเทพฯ พร้อมระบบจัดการสต็อก</p>
@@ -205,7 +226,7 @@ export default function PrCargoPage() {
 
                             <div className="relative z-10 hover:scale-105 transition-transform duration-500 drop-shadow-2xl">
                                 <Image
-                                    src={getImagePath("/icon-truck-custom.png")} alt="PR Cargo Mascot"
+                                    src={IconTruck} alt="PR Cargo Mascot"
                                     width={450}
                                     height={550}
                                     className="w-full max-w-sm lg:max-w-md object-contain relative z-20"
@@ -235,7 +256,7 @@ export default function PrCargoPage() {
                                     </div>
                                     <div className="flex-1 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 group-hover:shadow-md group-hover:border-primary/30 transition-all cursor-default relative overflow-hidden">
                                         <div className="absolute -right-6 -bottom-6 opacity-10 group-hover:opacity-20 transition-opacity">
-                                            <Image src={getImagePath("/mascot-laptop.png")} alt="Register" width={100} height={100} />
+                                            <Image src={MascotLaptop} alt="Register" width={100} height={100} />
                                         </div>
                                         <h3 className="text-xl font-bold text-[#1F2937] mb-2">สมัครสมาชิก</h3>
                                         <p className="text-[#1F2937]/80 relative z-10">รับ <span className="text-primary font-bold">รหัสลูกค้า (Mark)</span> ประจำตัวฟรี! สำหรับนำไปเขียนจ่าหน้าซองพัสดุ</p>
@@ -283,11 +304,11 @@ export default function PrCargoPage() {
                     {/* Marquee Container */}
                     <div className="animate-marquee gap-16 px-4 items-center">
                         {/* Original Set */}
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                            <div key={`set1-${num}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer hover:scale-110">
+                        {PlatformImages.map((img, idx) => (
+                            <div key={`set1-${idx}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer hover:scale-110">
                                 <Image
-                                    src={getImagePath(`/platform-${num}.png`)}
-                                    alt={`Platform ${num}`}
+                                    src={img}
+                                    alt={`Platform ${idx + 1}`}
                                     width={200}
                                     height={100}
                                     className="h-20 md:h-28 w-auto object-contain"
@@ -295,11 +316,11 @@ export default function PrCargoPage() {
                             </div>
                         ))}
                         {/* Duplicate Set for Infinite Loop */}
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                            <div key={`set2-${num}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer hover:scale-110">
+                        {PlatformImages.map((img, idx) => (
+                            <div key={`set2-${idx}`} className="flex-shrink-0 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer hover:scale-110">
                                 <Image
-                                    src={getImagePath(`/platform-${num}.png`)}
-                                    alt={`Platform ${num}`}
+                                    src={img}
+                                    alt={`Platform ${idx + 1}`}
                                     width={200}
                                     height={100}
                                     className="h-20 md:h-28 w-auto object-contain"

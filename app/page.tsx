@@ -6,6 +6,10 @@ import { ArrowRight, CheckCircle, Users, Ship, Plane, ShieldCheck, TrendingUp, M
 
 import Script from "next/script";
 import { getImagePath } from "@/app/utils/path";
+import IconTransport from "@/app/assets/images/icon-transport.png";
+import IconTax from "@/app/assets/images/icon-tax.png";
+import IconWarehouse from "@/app/assets/images/icon-warehouse.png";
+import MascotTelescope from "@/app/assets/images/mascot-telescope-box.png";
 
 export default function Home() {
   return (
@@ -90,7 +94,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Image src={getImagePath("/icon-transport.png")} alt="Transport Icon" width={150} height={150} className="object-contain" />
+                <Image src={IconTransport} alt="Transport Icon" width={150} height={150} className="object-contain" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">ขนส่งด่วน ทางรถ/เรือ</h3>
               <p className="text-[#1F2937] opacity-80">
@@ -102,7 +106,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Image src={getImagePath("/icon-tax.png")} alt="Tax Icon" width={150} height={150} className="object-contain" />
+                <Image src={IconTax} alt="Tax Icon" width={150} height={150} className="object-contain" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">เคลียร์ภาษี แบบเหมา</h3>
               <p className="text-[#1F2937] opacity-80">
@@ -114,7 +118,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
               <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
               <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Image src={getImagePath("/icon-warehouse.png")} alt="Warehouse Icon" width={150} height={150} className="object-contain" />
+                <Image src={IconWarehouse} alt="Warehouse Icon" width={150} height={150} className="object-contain" />
               </div>
               <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">โกดังพักสินค้า 2 ประเทศ</h3>
               <p className="text-[#1F2937] opacity-80">
@@ -200,7 +204,7 @@ export default function Home() {
             </p>
             {/* Mascot Decoration */}
             <div className="absolute -right-16 top-6 opacity-20 lg:opacity-100 pointer-events-none animate-bounce-slow hidden xl:block">
-              <Image src={getImagePath("/mascot-telescope-box.png")} alt="Travel Mascot" width={220} height={220} className="object-contain" />
+              <Image src={MascotTelescope} alt="Travel Mascot" width={220} height={220} className="object-contain" />
             </div>
           </div>
 
