@@ -1,5 +1,6 @@
 import { Plane, ChevronRight, MapPin, Camera, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
+import { getImagePath } from '@/app/utils/path';
 
 export default function PrTravelPage() {
     return (
@@ -8,7 +9,7 @@ export default function PrTravelPage() {
             <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src="/travel-mascot.png"
+                        src={getImagePath("/travel-mascot.png")}
                         alt="Travel China Banner"
                         fill
                         priority
@@ -32,81 +33,153 @@ export default function PrTravelPage() {
                 </div>
             </div>
 
-            {/* Campaign Banners Section */}
-            <section className="py-16 bg-gray-50">
-                <div className="container mx-auto px-8 max-w-6xl">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div className="rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300 group">
-                            <Image
-                                src="/travel-banner-1.jpg"
-                                alt="Premium Travel Thai-China"
-                                width={800}
-                                height={800}
-                                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-                        <div className="rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-shadow duration-300 group">
-                            <Image
-                                src="/travel-banner-2.jpg"
-                                alt="Design Your Dream Trip"
-                                width={800}
-                                height={800}
-                                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
                 <div className="absolute top-10 right-0 md:right-20 w-32 md:w-48 opacity-100 z-10 pointer-events-none hidden lg:block">
-                    <Image src="/mascot-business.png" alt="Business Mascot" width={200} height={300} className="w-full h-auto" />
+                    <Image src={getImagePath("/mascot-business.png")} alt="Business Mascot" width={200} height={300} className="w-full h-auto" />
                 </div>
                 <div className="container mx-auto px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
-                    <p className="text-center text-[#1F2937]/70 mb-16 max-w-2xl mx-auto text-lg">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
+                    <p className="text-center text-[#1F2937]/70 mb-12 max-w-2xl mx-auto text-lg">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+
+                    <div className="flex flex-col gap-12 max-w-5xl mx-auto">
                         {[
                             {
-                                img: "https://images.unsplash.com/photo-1565620852783-c24c2c161358?q=80&w=2070&auto=format&fit=crop",
-                                title: "Business Tour",
-                                desc: "ทัวร์ดูงาน เยี่ยมชมโรงงาน (Factory Visit) พร้อมล่ามเจรจาธุรกิจ"
+                                img: "/service-premium.jpg",
+                                title: "Premium Package",
+                                desc: "เที่ยวจีนระดับพรีเมียม เส้นทางยอดนิยม ปักกิ่ง เซี่ยงไฮ้ กวางโจว ดูแลครบจบทุกขั้นตอน",
+                                isLocal: true
                             },
                             {
-                                img: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop",
-                                title: "Private Group",
-                                desc: "กรุ๊ปเหมาส่วนตัว ครอบครัว หรือองค์กร กำหนดเส้นทางและงบประมาณเองได้"
+                                img: "/service-design.jpg",
+                                title: "Design Your Trip",
+                                desc: "ออกแบบทริปในฝันของคุณ ไม่ว่าจะเป็นครอบครัว เพื่อน หรือดูงานองค์กร ตามงบประมาณที่คุณต้องการ",
+                                isLocal: true
                             },
                             {
-                                img: "https://images.unsplash.com/photo-1505567745926-ba89000d255a?q=80&w=2071&auto=format&fit=crop",
-                                title: "Unseen Route",
-                                desc: "เส้นทางพิเศษ ธรรมชาติและวัฒนธรรม ที่ทัวร์ทั่วไปเข้าไม่ถึง"
+                                img: "/service-factory-new.jpg",
+                                title: "Factory Tour & Business",
+                                desc: "เหมาะสำหรับเจ้าของแบรนด์และนักธุรกิจ พาเยี่ยมชมโรงงานจริง ดูกระบวนการผลิต พบปะซัพพลายเออร์ พร้อมศึกษาต้นทุนและมาตรฐานสินค้า",
+                                isLocal: true
                             },
                             {
-                                img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070&auto=format&fit=crop",
-                                title: "Car Rental",
-                                desc: "บริการรถเช่าพร้อมคนขับ และรถรับ-ส่งสนามบิน สะดวก สบาย ปลอดภัย"
+                                img: "/service-car-new.jpg",
+                                title: "Car Booking Service",
+                                desc: "บริการรถพร้อมคนขับ (เก๋ง/ตู้/SUV) สำหรับเดินทางในจีน รับ-ส่งสนามบิน และดูแลตลอดทริปธุรกิจหรือท่องเที่ยว",
+                                isLocal: true
                             },
                         ].map((tour, idx) => (
-                            <div key={idx} className="group rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:border-primary/20 transition-all">
-                                <div className="h-64 overflow-hidden relative">
-                                    <img src={tour.img} alt={tour.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                                    <div className="absolute bottom-4 left-4 text-white">
-                                        <MapPin size={20} className="mb-1" />
+                            <div key={idx} className="group rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:border-primary/20 transition-all flex flex-col md:flex-row bg-white hover:shadow-2xl">
+                                <div className="w-full md:w-1/2 aspect-[4/3] overflow-hidden relative shrink-0">
+                                    <Image
+                                        src={tour.isLocal ? getImagePath(tour.img) : tour.img}
+                                        alt={tour.title}
+                                        width={800}
+                                        height={600}
+                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                                    <div className="absolute bottom-4 left-4 md:bottom-auto md:top-6 md:left-6 text-white">
+                                        <MapPin size={32} className="mb-1 drop-shadow-md" />
                                     </div>
                                 </div>
-                                <div className="p-6 bg-white relative">
-                                    <h3 className="text-xl font-bold mb-2 text-[#1F2937] group-hover:text-primary transition-colors">{tour.title}</h3>
-                                    <p className="text-[#1F2937]/70 mb-4 text-sm h-10 leading-relaxed">{tour.desc}</p>
-                                    <div className="flex items-center text-primary font-bold text-sm cursor-pointer hover:underline gap-1">
-                                        ดูรายละเอียด <ChevronRight size={16} />
+                                <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                                    <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#1F2937] group-hover:text-primary transition-colors">{tour.title}</h3>
+                                    <p className="text-[#1F2937]/70 mb-8 text-lg leading-relaxed">{tour.desc}</p>
+                                    <div className="flex items-center text-primary font-bold text-lg cursor-pointer hover:underline gap-2 group/btn">
+                                        ดูรายละเอียด <ChevronRight size={22} className="group-hover/btn:translate-x-1 transition-transform" />
                                     </div>
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Popular Destinations (Bento Grid) */}
+            <section className="py-20 bg-gray-50">
+                <div className="container mx-auto px-8 max-w-6xl">
+                    <div className="flex items-center gap-3 mb-8">
+                        <MapPin className="text-red-500 fill-red-100" size={32} />
+                        <h2 className="text-3xl font-bold text-[#1F2937]">สถานที่ท่องเที่ยวยอดนิยม</h2>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]">
+                        {/* Col 1 */}
+                        <div className="flex flex-col gap-4">
+                            <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Guangzhou"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">กวางโจว</span>
+                            </div>
+                            <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1994&auto=format&fit=crop"
+                                    alt="Chengdu"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">เฉิงตู</span>
+                            </div>
+                        </div>
+
+                        {/* Col 2 - Tall */}
+                        <div className="relative h-64 md:h-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                            <Image
+                                src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?q=80&w=2070&auto=format&fit=crop"
+                                alt="Shanghai"
+                                fill
+                                className="object-cover group-hover:scale-110 transition-transform duration-700"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                            <span className="absolute bottom-6 left-6 text-white text-2xl font-bold drop-shadow-md">เซี่ยงไฮ้</span>
+                        </div>
+
+                        {/* Col 3 & 4 */}
+                        <div className="md:col-span-2 flex flex-col gap-4">
+                            <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop"
+                                    alt="Beijing"
+                                    fill
+                                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                <span className="absolute bottom-6 left-6 text-white text-2xl font-bold drop-shadow-md">ปักกิ่ง</span>
+                            </div>
+                            <div className="flex flex-col md:flex-row gap-4 h-full md:h-1/2">
+                                <div className="relative h-64 md:h-full w-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop"
+                                        alt="Chongqing"
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                    <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">ฉงชิ่ง</span>
+                                </div>
+                                <div className="relative h-64 md:h-full w-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
+                                    <Image
+                                        src="https://images.unsplash.com/photo-1504229986326-f4c0ce3b7080?q=80&w=1974&auto=format&fit=crop"
+                                        alt="Kunming"
+                                        fill
+                                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                                    <span className="absolute bottom-4 left-4 text-white text-xl font-bold drop-shadow-md">คุนหมิง</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -175,13 +248,7 @@ export default function PrTravelPage() {
                         </div>
                     </div>
 
-                    {/* Cute Mascot Doodad */}
-                    <div className="mt-16 flex justify-center">
-                        <div className="relative inline-block">
-                            <div className="absolute -inset-4 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-                            <Image src="/mascot-standing.png" alt="Trusted Mascot" width={180} height={180} className="relative z-10 drop-shadow-lg hover:scale-105 transition-transform cursor-pointer" />
-                        </div>
-                    </div>
+
                 </div>
             </section>
         </div>
