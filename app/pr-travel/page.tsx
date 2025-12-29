@@ -1,6 +1,10 @@
 import { Plane, ChevronRight, MapPin, Camera, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { getImagePath } from '@/app/utils/path';
+import ServicePremium from '@/app/assets/images/service-premium.jpg';
+import ServiceDesign from '@/app/assets/images/service-design.jpg';
+import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
+import ServiceCar from '@/app/assets/images/service-car-new.jpg';
 
 export default function PrTravelPage() {
     return (
@@ -49,37 +53,38 @@ export default function PrTravelPage() {
                     <div className="flex flex-col gap-12 max-w-5xl mx-auto">
                         {[
                             {
-                                img: "/service-premium.jpg",
+                                img: ServicePremium,
                                 title: "Premium Package",
                                 desc: "เที่ยวจีนระดับพรีเมียม เส้นทางยอดนิยม ปักกิ่ง เซี่ยงไฮ้ กวางโจว ดูแลครบจบทุกขั้นตอน",
-                                isLocal: true
+                                isLocal: false // Imported assets don't need getImagePath
                             },
                             {
-                                img: "/service-design.jpg",
+                                img: ServiceDesign,
                                 title: "Design Your Trip",
                                 desc: "ออกแบบทริปในฝันของคุณ ไม่ว่าจะเป็นครอบครัว เพื่อน หรือดูงานองค์กร ตามงบประมาณที่คุณต้องการ",
-                                isLocal: true
+                                isLocal: false
                             },
                             {
-                                img: "/service-factory-new.jpg",
+                                img: ServiceFactory,
                                 title: "Factory Tour & Business",
                                 desc: "เหมาะสำหรับเจ้าของแบรนด์และนักธุรกิจ พาเยี่ยมชมโรงงานจริง ดูกระบวนการผลิต พบปะซัพพลายเออร์ พร้อมศึกษาต้นทุนและมาตรฐานสินค้า",
-                                isLocal: true
+                                isLocal: false
                             },
                             {
-                                img: "/service-car-new.jpg",
+                                img: ServiceCar,
                                 title: "Car Booking Service",
                                 desc: "บริการรถพร้อมคนขับ (เก๋ง/ตู้/SUV) สำหรับเดินทางในจีน รับ-ส่งสนามบิน และดูแลตลอดทริปธุรกิจหรือท่องเที่ยว",
-                                isLocal: true
+                                isLocal: false
                             },
                         ].map((tour, idx) => (
                             <div key={idx} className="group rounded-3xl overflow-hidden shadow-xl border border-gray-100 hover:border-primary/20 transition-all flex flex-col md:flex-row bg-white hover:shadow-2xl">
                                 <div className="w-full md:w-1/2 aspect-[4/3] overflow-hidden relative shrink-0">
                                     <Image
-                                        src={tour.isLocal ? getImagePath(tour.img) : tour.img}
+                                        src={tour.img}
                                         alt={tour.title}
                                         width={800}
                                         height={600}
+                                        placeholder="blur"
                                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
