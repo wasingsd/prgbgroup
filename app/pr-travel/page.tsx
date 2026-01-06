@@ -7,13 +7,13 @@ import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
 import ServiceCar from '@/app/assets/images/service-car-new.jpg';
 // Pr-Travel Images for Decoration
 import MascotBus from '@/app/assets/images/mascot-pr-travel-bus.png';
-import MascotWelcome from '@/app/assets/images/mascot-pr-travel-Welcome.png';
+import MascotWelcome from '@/app/assets/images/mascot-pr-travel-welcome.png';
 import MascotMap from '@/app/assets/images/mascot-pr-travel-map.png';
 import MascotPlane from '@/app/assets/images/mascot-pr-travel-plane.png';
 import MascotCare from '@/app/assets/images/mascot-pr-travel-care.png';
 import MascotGuide from '@/app/assets/images/mascot-pr-travel-guide.png';
 import MascotPresent from '@/app/assets/images/mascot-pr-travel-present.png';
-import MascotFinish from '@/app/assets/images/mascot-pr-travel-Finish.png';
+import MascotFinish from '@/app/assets/images/mascot-pr-travel-finish.png';
 import TravelMascot from '@/app/assets/images/travel-mascot.png';
 
 
