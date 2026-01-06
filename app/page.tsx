@@ -10,8 +10,8 @@ import IconTransport from "@/app/assets/images/icon-transport.png";
 import IconTax from "@/app/assets/images/icon-tax.png";
 import IconWarehouse from "@/app/assets/images/icon-warehouse.png";
 import MascotTelescope from "@/app/assets/images/mascot-telescope-box.png";
-import LogoCargo from "@/app/assets/images/logo-cargo.png";
-import LogoTravel from "@/app/assets/images/logo-travel.png";
+import LogoCargo from "@/app/assets/images/logo-cargo-new.png";
+import LogoTravel from "@/app/assets/images/logo-travel-new.png";
 
 import HomeBannerMain from "@/app/assets/images/home-banner-main.png";
 
