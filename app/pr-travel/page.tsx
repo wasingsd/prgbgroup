@@ -134,8 +134,8 @@ export default function PrTravelPage() {
                     <div className="flex items-center gap-3 mb-8 relative">
                         <MapPin className="text-red-500 fill-red-100" size={32} />
                         <h2 className="text-xl md:text-3xl font-bold text-[#1F2937] whitespace-nowrap">สถานที่ท่องเที่ยวยอดนิยม</h2>
-                        <div className="hidden md:block absolute -right-16 -top-12 rotate-12">
-                            <Image src={MascotCare} alt="Love Travel" width={100} height={100} className="w-24 h-auto drop-shadow-md" />
+                        <div className="hidden md:block absolute -right-32 -top-20 rotate-12">
+                            <Image src={MascotCare} alt="Love Travel" width={250} height={250} className="w-64 h-auto drop-shadow-md" />
                         </div>
                     </div>
 
@@ -144,7 +144,7 @@ export default function PrTravelPage() {
                         <div className="flex flex-col gap-4">
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src={ServiceFactory}
+                                    src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=2070&auto=format&fit=crop"
                                     alt="Guangzhou"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -154,7 +154,7 @@ export default function PrTravelPage() {
                             </div>
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src={ServiceCar}
+                                    src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1994&auto=format&fit=crop"
                                     alt="Chengdu"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -167,7 +167,7 @@ export default function PrTravelPage() {
                         {/* Col 2 - Tall */}
                         <div className="relative h-64 md:h-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                             <Image
-                                src={ServiceDesign}
+                                src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?q=80&w=2070&auto=format&fit=crop"
                                 alt="Shanghai"
                                 fill
                                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -180,7 +180,7 @@ export default function PrTravelPage() {
                         <div className="md:col-span-2 flex flex-col gap-4">
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src={ServicePremium}
+                                    src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop"
                                     alt="Beijing"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -190,7 +190,7 @@ export default function PrTravelPage() {
                             </div>
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src={ServiceFactory}
+                                    src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop"
                                     alt="Chongqing"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
