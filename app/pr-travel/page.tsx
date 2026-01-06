@@ -11,9 +11,7 @@ import MascotWelcome from '@/app/assets/images/mascot-pr-travel-welcome.png';
 import MascotMap from '@/app/assets/images/mascot-pr-travel-map.png';
 import MascotPlane from '@/app/assets/images/mascot-pr-travel-plane.png';
 import MascotCare from '@/app/assets/images/mascot-pr-travel-care.png';
-import MascotGuide from '@/app/assets/images/mascot-pr-travel-guide.png';
 import MascotPresent from '@/app/assets/images/mascot-pr-travel-present.png';
-import MascotFinish from '@/app/assets/images/mascot-pr-travel-finish.png';
 import TravelMascot from '@/app/assets/images/travel-mascot.png';
 
 
@@ -46,8 +44,9 @@ export default function PrTravelPage() {
                         ออกแบบทริปของคุณ
                     </button>
                     {/* Floating Mascots in Hero */}
-                    <div className="absolute right-[10%] bottom-[10%] hidden lg:block animate-bounce-slow">
-                        <Image src={MascotMap} alt="Travel Alpaca" width={180} height={180} className="w-40 h-auto drop-shadow-2xl rotate-6" />
+                    {/* Floating Mascots in Hero */}
+                    <div className="absolute right-[5%] bottom-[5%] hidden lg:block animate-bounce-slow">
+                        <Image src={MascotMap} alt="Travel Alpaca" width={240} height={240} className="w-64 h-auto drop-shadow-2xl rotate-6" />
                     </div>
                 </div>
             </div>
@@ -56,16 +55,13 @@ export default function PrTravelPage() {
 
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
-                <div className="absolute top-10 right-0 md:right-20 w-32 md:w-48 opacity-100 z-10 pointer-events-none hidden lg:block">
-                    <Image src={MascotGuide} alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto drop-shadow-xl" />
-                </div>
-                <div className="absolute top-40 left-10 w-24 opacity-80 z-10 pointer-events-none hidden lg:block animate-pulse">
-                    <Image src={MascotBus} alt="Bus Mascot" width={150} height={150} className="w-full h-auto -rotate-12" />
+                <div className="absolute top-20 left-10 w-48 opacity-90 z-10 pointer-events-none hidden lg:block animate-pulse">
+                    <Image src={MascotBus} alt="Bus Mascot" width={250} height={250} className="w-full h-auto -rotate-12 drop-shadow-lg" />
                 </div>
                 <div className="container mx-auto px-8 relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
                     <div className="flex justify-center mb-8">
-                        <Image src={MascotWelcome} alt="Welcome Alpaca" width={100} height={100} className="w-20 h-auto animate-bounce-slow" />
+                        <Image src={MascotWelcome} alt="Welcome Alpaca" width={200} height={200} className="w-40 h-auto animate-bounce-slow" />
                     </div>
                     <p className="text-center text-[#1F2937]/70 mb-12 max-w-2xl mx-auto text-lg">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
 
@@ -218,9 +214,6 @@ export default function PrTravelPage() {
                     <div className="text-center mb-16 relative">
                         {/* Decorative Elements */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-20 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-                        <div className="absolute -left-4 md:left-20 top-0 hidden lg:block animate-bounce-slow">
-                            <Image src={MascotFinish} alt="Happy Travel" width={120} height={120} className="w-28 h-auto drop-shadow-lg" />
-                        </div>
                         <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] mb-6">
                             ทำไมต้องเดินทางกับ <span className="text-primary">PR TRAVEL</span>
                         </h2>
