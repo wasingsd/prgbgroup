@@ -6,12 +6,13 @@ import ServiceDesign from '@/app/assets/images/service-design.jpg';
 import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
 import ServiceCar from '@/app/assets/images/service-car-new.jpg';
 // Pr-Travel Images for Decoration
-import MascotBus from '@/app/assets/images/mascot-pr-travel-bus.png';
+import MascotStand from '@/app/assets/images/mascot-pr-travel-stand.png';
 import MascotWelcome from '@/app/assets/images/mascot-pr-travel-welcome.png';
 import MascotMap from '@/app/assets/images/mascot-pr-travel-map.png';
 import MascotPlane from '@/app/assets/images/mascot-pr-travel-plane.png';
 import MascotCare from '@/app/assets/images/mascot-pr-travel-care.png';
 import MascotPresent from '@/app/assets/images/mascot-pr-travel-present.png';
+import MascotConfirm from '@/app/assets/images/mascot-pr-travel-confirm.png';
 import TravelMascot from '@/app/assets/images/travel-mascot.png';
 
 
@@ -55,8 +56,8 @@ export default function PrTravelPage() {
 
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
-                <div className="absolute top-20 left-10 w-48 opacity-90 z-10 pointer-events-none hidden lg:block animate-pulse">
-                    <Image src={MascotBus} alt="Bus Mascot" width={250} height={250} className="w-full h-auto -rotate-12 drop-shadow-lg" />
+                <div className="absolute top-20 left-10 w-32 opacity-90 z-10 pointer-events-none hidden lg:block animate-pulse">
+                    <Image src={MascotStand} alt="Stand Mascot" width={150} height={250} className="w-full h-auto drop-shadow-lg" />
                 </div>
                 <div className="container mx-auto px-8 relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
@@ -149,7 +150,7 @@ export default function PrTravelPage() {
                         <div className="flex flex-col gap-4">
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?q=80&w=2070&auto=format&fit=crop"
+                                    src={ServiceFactory}
                                     alt="Guangzhou"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -159,7 +160,7 @@ export default function PrTravelPage() {
                             </div>
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1994&auto=format&fit=crop"
+                                    src={ServiceCar}
                                     alt="Chengdu"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -172,7 +173,7 @@ export default function PrTravelPage() {
                         {/* Col 2 - Tall */}
                         <div className="relative h-64 md:h-full rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                             <Image
-                                src="https://images.unsplash.com/photo-1474181487882-5abf3f0ba6c2?q=80&w=2070&auto=format&fit=crop"
+                                src={ServiceDesign}
                                 alt="Shanghai"
                                 fill
                                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -185,7 +186,7 @@ export default function PrTravelPage() {
                         <div className="md:col-span-2 flex flex-col gap-4">
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop"
+                                    src={ServicePremium}
                                     alt="Beijing"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -195,7 +196,7 @@ export default function PrTravelPage() {
                             </div>
                             <div className="relative h-64 md:h-1/2 rounded-2xl overflow-hidden group cursor-pointer shadow-lg">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=2070&auto=format&fit=crop"
+                                    src={ServiceFactory}
                                     alt="Chongqing"
                                     fill
                                     className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -214,6 +215,9 @@ export default function PrTravelPage() {
                     <div className="text-center mb-16 relative">
                         {/* Decorative Elements */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-20 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+                        <div className="absolute -left-4 md:left-20 top-0 hidden lg:block animate-bounce-slow">
+                            <Image src={MascotConfirm} alt="Confirm Travel" width={120} height={120} className="w-28 h-auto drop-shadow-lg" />
+                        </div>
                         <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] mb-6">
                             ทำไมต้องเดินทางกับ <span className="text-primary">PR TRAVEL</span>
                         </h2>
