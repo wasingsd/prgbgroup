@@ -2,6 +2,7 @@
   "name": "prgbgroup",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://wasingsd.github.io/prgbgroup",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
