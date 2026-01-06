@@ -59,9 +59,7 @@ export default function PrTravelPage() {
 
                 <div className="container mx-auto px-8 relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
-                    <div className="flex justify-center mb-8">
-                        <Image src={MascotWelcome} alt="Welcome Alpaca" width={200} height={200} className="w-40 h-auto animate-bounce-slow" />
-                    </div>
+
                     <p className="text-center text-[#1F2937]/70 mb-12 max-w-2xl mx-auto text-lg">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
 
 
