@@ -6,15 +6,14 @@ import ServiceDesign from '@/app/assets/images/service-design.jpg';
 import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
 import ServiceCar from '@/app/assets/images/service-car-new.jpg';
 // Pr-Travel Images for Decoration
-import PrTravel1 from '@/app/assets/images/pr-travel-1.jpg';
-import PrTravel2 from '@/app/assets/images/pr-travel-2.jpg';
-import PrTravel3 from '@/app/assets/images/pr-travel-3.jpg';
-import PrTravel4 from '@/app/assets/images/pr-travel-4.jpg';
-import PrTravel5 from '@/app/assets/images/pr-travel-5.jpg';
-import PrTravel6 from '@/app/assets/images/pr-travel-6.jpg';
-import PrTravel7 from '@/app/assets/images/pr-travel-7.jpg';
-import PrTravel8 from '@/app/assets/images/pr-travel-8.jpg';
-import PrTravel12 from '@/app/assets/images/pr-travel-12.jpg';
+import MascotBus from '@/app/assets/images/mascot-pr-travel-bus.png';
+import MascotWelcome from '@/app/assets/images/mascot-pr-travel-Welcome.png';
+import MascotMap from '@/app/assets/images/mascot-pr-travel-map.png';
+import MascotPlane from '@/app/assets/images/mascot-pr-travel-plane.png';
+import MascotCare from '@/app/assets/images/mascot-pr-travel-care.png';
+import MascotGuide from '@/app/assets/images/mascot-pr-travel-guide.png';
+import MascotPresent from '@/app/assets/images/mascot-pr-travel-present.png';
+import MascotFinish from '@/app/assets/images/mascot-pr-travel-Finish.png';
 import TravelMascot from '@/app/assets/images/travel-mascot.png';
 
 
@@ -48,7 +47,7 @@ export default function PrTravelPage() {
                     </button>
                     {/* Floating Mascots in Hero */}
                     <div className="absolute right-[10%] bottom-[10%] hidden lg:block animate-bounce-slow">
-                        <Image src={PrTravel3} alt="Travel Alpaca" width={180} height={180} className="w-40 h-auto drop-shadow-2xl rotate-6" />
+                        <Image src={MascotMap} alt="Travel Alpaca" width={180} height={180} className="w-40 h-auto drop-shadow-2xl rotate-6" />
                     </div>
                 </div>
             </div>
@@ -58,15 +57,15 @@ export default function PrTravelPage() {
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
                 <div className="absolute top-10 right-0 md:right-20 w-32 md:w-48 opacity-100 z-10 pointer-events-none hidden lg:block">
-                    <Image src={PrTravel7} alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto drop-shadow-xl" />
+                    <Image src={MascotGuide} alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto drop-shadow-xl" />
                 </div>
                 <div className="absolute top-40 left-10 w-24 opacity-80 z-10 pointer-events-none hidden lg:block animate-pulse">
-                    <Image src={PrTravel1} alt="Bus Mascot" width={150} height={150} className="w-full h-auto -rotate-12" />
+                    <Image src={MascotBus} alt="Bus Mascot" width={150} height={150} className="w-full h-auto -rotate-12" />
                 </div>
                 <div className="container mx-auto px-8 relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
                     <div className="flex justify-center mb-8">
-                        <Image src={PrTravel2} alt="Welcome Alpaca" width={100} height={100} className="w-20 h-auto animate-bounce-slow" />
+                        <Image src={MascotWelcome} alt="Welcome Alpaca" width={100} height={100} className="w-20 h-auto animate-bounce-slow" />
                     </div>
                     <p className="text-center text-[#1F2937]/70 mb-12 max-w-2xl mx-auto text-lg">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
 
@@ -116,12 +115,12 @@ export default function PrTravelPage() {
                                     {/* Decorative Mascot for Specific Cards */}
                                     {idx === 0 && (
                                         <div className="absolute bottom-2 right-2 w-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <Image src={PrTravel4} alt="Plane Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg" />
+                                            <Image src={MascotPlane} alt="Plane Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg" />
                                         </div>
                                     )}
                                     {idx === 1 && (
                                         <div className="absolute bottom-2 right-2 w-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <Image src={PrTravel8} alt="Megaphone Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg scale-x-[-1]" />
+                                            <Image src={MascotPresent} alt="Megaphone Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg scale-x-[-1]" />
                                         </div>
                                     )}
                                 </div>
@@ -145,7 +144,7 @@ export default function PrTravelPage() {
                         <MapPin className="text-red-500 fill-red-100" size={32} />
                         <h2 className="text-xl md:text-3xl font-bold text-[#1F2937] whitespace-nowrap">สถานที่ท่องเที่ยวยอดนิยม</h2>
                         <div className="hidden md:block absolute -right-16 -top-12 rotate-12">
-                            <Image src={PrTravel5} alt="Love Travel" width={100} height={100} className="w-24 h-auto drop-shadow-md" />
+                            <Image src={MascotCare} alt="Love Travel" width={100} height={100} className="w-24 h-auto drop-shadow-md" />
                         </div>
                     </div>
 
@@ -220,7 +219,7 @@ export default function PrTravelPage() {
                         {/* Decorative Elements */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-20 bg-primary/5 rounded-full blur-3xl -z-10"></div>
                         <div className="absolute -left-4 md:left-20 top-0 hidden lg:block animate-bounce-slow">
-                            <Image src={PrTravel12} alt="Happy Travel" width={120} height={120} className="w-28 h-auto drop-shadow-lg" />
+                            <Image src={MascotFinish} alt="Happy Travel" width={120} height={120} className="w-28 h-auto drop-shadow-lg" />
                         </div>
                         <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] mb-6">
                             ทำไมต้องเดินทางกับ <span className="text-primary">PR TRAVEL</span>
