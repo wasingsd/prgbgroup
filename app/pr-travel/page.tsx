@@ -6,8 +6,6 @@ import ServiceDesign from '@/app/assets/images/service-design.jpg';
 import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
 import ServiceCar from '@/app/assets/images/service-car-new.jpg';
 // Pr-Travel Images for Decoration
-import MascotStand from '@/app/assets/images/mascot-pr-travel-stand.png';
-import MascotWelcome from '@/app/assets/images/mascot-pr-travel-welcome.png';
 import MascotMap from '@/app/assets/images/mascot-pr-travel-map.png';
 import MascotPlane from '@/app/assets/images/mascot-pr-travel-plane.png';
 import MascotCare from '@/app/assets/images/mascot-pr-travel-care.png';
