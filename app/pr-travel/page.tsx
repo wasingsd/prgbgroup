@@ -12,13 +12,14 @@ import MascotCare from '@/app/assets/images/mascot-pr-travel-care.png';
 import MascotPresent from '@/app/assets/images/mascot-pr-travel-present.png';
 import MascotConfirm from '@/app/assets/images/mascot-pr-travel-confirm.png';
 import TravelMascot from '@/app/assets/images/travel-mascot.png';
+import LogoTravel from "@/app/assets/images/logo-travel-new.png";
 
 
 export default function PrTravelPage() {
     return (
         <div>
             {/* Travel Hero */}
-            <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
+            <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-24 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
                         src={TravelMascot}
@@ -30,8 +31,11 @@ export default function PrTravelPage() {
                     <div className="absolute inset-0 bg-black/50"></div>
                 </div>
                 <div className="container mx-auto px-8 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-3 mb-6 text-primary font-bold bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
-                        <Plane size={24} className="text-white" /> <span className="text-white tracking-wide">PR TRAVEL</span>
+                    {/* Logo in Banner */}
+                    <div className="flex justify-center mb-8">
+                        <div className="w-48 h-48 md:w-64 md:h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-6 border border-white/20 shadow-2xl">
+                            <Image src={LogoTravel} alt="PR Travel Logo" className="w-full h-full object-contain drop-shadow-lg" />
+                        </div>
                     </div>
                     <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-md">
                         เปิดประสบการณ์ใหม่ <br className="hidden md:block" /> ทุกการเดินทาง
