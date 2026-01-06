@@ -12,6 +12,7 @@ import PrTravel5 from '@/app/assets/images/pr-travel-5.jpg';
 import PrTravel6 from '@/app/assets/images/pr-travel-6.jpg';
 import PrTravel7 from '@/app/assets/images/pr-travel-7.jpg';
 import PrTravel12 from '@/app/assets/images/pr-travel-12.jpg';
+import TravelMascot from '@/app/assets/images/travel-mascot.png';
 
 
 export default function PrTravelPage() {
@@ -21,11 +22,11 @@ export default function PrTravelPage() {
             <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src={PrTravel3}
+                        src={TravelMascot}
                         alt="Travel Banner"
                         fill
                         priority
-                        className="object-cover object-center opacity-40"
+                        className="object-cover object-center opacity-40 "
                     />
                     <div className="absolute inset-0 bg-black/50"></div>
                 </div>
@@ -39,9 +40,13 @@ export default function PrTravelPage() {
                     <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 font-light">
                         บริการจัดกรุ๊ปทัวร์ส่วนตัว ทัวร์ดูงาน และเส้นทางท่องเที่ยว Unseen ในจีน <br className="hidden md:block" /> ดูแลดุจญาติมิตร โดยทีมงานมืออาชีพ
                     </p>
-                    <button className="bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1">
+                    <button className="bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1 relative z-10">
                         ออกแบบทริปของคุณ
                     </button>
+                    {/* Floating Mascots in Hero */}
+                    <div className="absolute right-[10%] bottom-[10%] hidden lg:block animate-bounce-slow">
+                        <Image src={PrTravel3} alt="Travel Alpaca" width={180} height={180} className="w-40 h-auto drop-shadow-2xl rotate-6" />
+                    </div>
                 </div>
             </div>
 
@@ -50,7 +55,10 @@ export default function PrTravelPage() {
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
                 <div className="absolute top-10 right-0 md:right-20 w-32 md:w-48 opacity-100 z-10 pointer-events-none hidden lg:block">
-                    <Image src={PrTravel7} alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto" />
+                    <Image src={PrTravel7} alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto drop-shadow-xl" />
+                </div>
+                <div className="absolute top-40 left-10 w-24 opacity-80 z-10 pointer-events-none hidden lg:block animate-pulse">
+                    <Image src={PrTravel1} alt="Bus Mascot" width={150} height={150} className="w-full h-auto -rotate-12" />
                 </div>
                 <div className="container mx-auto px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
