@@ -11,7 +11,7 @@ export default function PrTravelPage() {
             <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <Image
-                        src="/pr-travel/pr-travel-3.jpg"
+                        src={getImagePath("/pr-travel/pr-travel-3.jpg")}
                         alt="Travel Banner"
                         fill
                         priority
@@ -40,7 +40,7 @@ export default function PrTravelPage() {
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
                 <div className="absolute top-10 right-0 md:right-20 w-32 md:w-48 opacity-100 z-10 pointer-events-none hidden lg:block">
-                    <Image src="/pr-travel/pr-travel-7.jpg" alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto" />
+                    <Image src={getImagePath("/pr-travel/pr-travel-7.jpg")} alt="Travel Guide Mascot" width={200} height={300} className="w-full h-auto" />
                 </div>
                 <div className="container mx-auto px-8">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
@@ -51,25 +51,25 @@ export default function PrTravelPage() {
                     <div className="flex flex-col gap-12 max-w-5xl mx-auto">
                         {[
                             {
-                                img: "/pr-travel/pr-travel-3.jpg",
+                                img: getImagePath("/pr-travel/pr-travel-3.jpg"),
                                 title: "Premium Package",
                                 desc: "เที่ยวจีนระดับพรีเมียม เส้นทางยอดนิยม ปักกิ่ง เซี่ยงไฮ้ กวางโจว ดูแลครบจบทุกขั้นตอน",
                                 isLocal: false
                             },
                             {
-                                img: "/pr-travel/pr-travel-6.jpg",
+                                img: getImagePath("/pr-travel/pr-travel-6.jpg"),
                                 title: "Design Your Trip",
                                 desc: "ออกแบบทริปในฝันของคุณ ไม่ว่าจะเป็นครอบครัว เพื่อน หรือดูงานองค์กร ตามงบประมาณที่คุณต้องการ",
                                 isLocal: false
                             },
                             {
-                                img: "/pr-travel/pr-travel-12.jpg",
+                                img: getImagePath("/pr-travel/pr-travel-12.jpg"),
                                 title: "Factory Tour & Business",
                                 desc: "เหมาะสำหรับเจ้าของแบรนด์และนักธุรกิจ พาเยี่ยมชมโรงงานจริง ดูกระบวนการผลิต พบปะซัพพลายเออร์ พร้อมศึกษาต้นทุนและมาตรฐานสินค้า",
                                 isLocal: false
                             },
                             {
-                                img: "/pr-travel/pr-travel-1.jpg",
+                                img: getImagePath("/pr-travel/pr-travel-1.jpg"),
                                 title: "Car Booking Service",
                                 desc: "บริการรถพร้อมคนขับ (เก๋ง/ตู้/SUV) สำหรับเดินทางในจีน รับ-ส่งสนามบิน และดูแลตลอดทริปธุรกิจหรือท่องเที่ยว",
                                 isLocal: false
