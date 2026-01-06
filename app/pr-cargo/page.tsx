@@ -8,6 +8,7 @@ import IconTransport from '@/app/assets/images/icon-transport.png';
 import IconTax from '@/app/assets/images/icon-tax.png';
 import IconWarehouse from '@/app/assets/images/icon-warehouse.png';
 import MascotLaptop from '@/app/assets/images/mascot-laptop.png';
+import LogoCargo from "@/app/assets/images/logo-cargo-new.png";
 
 import Platform1 from '@/app/assets/images/platform-1.png';
 import Platform2 from '@/app/assets/images/platform-2.png';
@@ -29,19 +30,30 @@ export default function PrCargoPage() {
     return (
         <div>
             {/* Cargo Hero */}
+            {/* Cargo Hero */}
             <div className="bg-gradient-to-r from-footer-start to-footer-end text-white pt-32 pb-20 relative overflow-hidden">
                 <div className="absolute inset-0">
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-20" alt="Cargo Container" />
                 </div>
-                <div className="container mx-auto px-8 relative z-10">
-                    <div className="flex items-center gap-3 mb-4 text-primary font-bold bg-white/10 w-fit px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
-                        <Ship size={24} className="text-white" /> <span className="text-white">PR CARGO</span>
+                <div className="container mx-auto px-8 relative z-10 text-center">
+                    <div className="inline-flex items-center gap-3 mb-6 text-primary font-bold bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+                        <Ship size={24} className="text-white" /> <span className="text-white tracking-wide">PR CARGO</span>
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">บริการนำเข้า-ส่งออก <br />จีน-ไทย ครบวงจร</h1>
-                    <p className="text-xl text-white/80 max-w-2xl mb-8">
-                        ผู้เชี่ยวชาญด้านโลจิสติกส์ บริการขนส่งทางบก ทางเรือ พร้อมเคลียร์ภาษีและเดินพิธีการศุลกากร รวดเร็ว ปลอดภัย ตรวจสอบสถานะได้ 24 ชม.
+
+                    {/* Logo in Banner */}
+                    <div className="flex justify-center mb-8">
+                        <div className="w-32 h-32 md:w-40 md:h-40 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-4 border border-white/20 shadow-2xl">
+                            <Image src={LogoCargo} alt="PR Cargo Logo" className="w-full h-full object-contain drop-shadow-lg" />
+                        </div>
+                    </div>
+
+                    <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-md">
+                        บริการนำเข้า-ส่งออก <br className="hidden md:block" /> จีน-ไทย ครบวงจร
+                    </h1>
+                    <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 font-light">
+                        ผู้เชี่ยวชาญด้านโลจิสติกส์ บริการขนส่งทางบก ทางเรือ พร้อมเคลียร์ภาษีและเดินพิธีการศุลกากร <br className="hidden md:block" /> รวดเร็ว ปลอดภัย ตรวจสอบสถานะได้ 24 ชม.
                     </p>
-                    <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-bold transition-colors">
+                    <button className="bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1 relative z-10">
                         ขอเรทราคาขนส่ง
                     </button>
                 </div>
