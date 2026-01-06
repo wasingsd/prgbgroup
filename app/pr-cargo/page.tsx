@@ -36,13 +36,9 @@ export default function PrCargoPage() {
                     <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-20" alt="Cargo Container" />
                 </div>
                 <div className="container mx-auto px-8 relative z-10 text-center">
-                    <div className="inline-flex items-center gap-3 mb-6 text-primary font-bold bg-white/10 px-4 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
-                        <Ship size={24} className="text-white" /> <span className="text-white tracking-wide">PR CARGO</span>
-                    </div>
-
                     {/* Logo in Banner */}
                     <div className="flex justify-center mb-8">
-                        <div className="w-32 h-32 md:w-40 md:h-40 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-4 border border-white/20 shadow-2xl">
+                        <div className="w-48 h-48 md:w-64 md:h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-6 border border-white/20 shadow-2xl">
                             <Image src={LogoCargo} alt="PR Cargo Logo" className="w-full h-full object-contain drop-shadow-lg" />
                         </div>
                     </div>
