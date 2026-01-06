@@ -13,6 +13,8 @@ import MascotTelescope from "@/app/assets/images/mascot-telescope-box.png";
 import LogoCargo from "@/app/assets/images/logo-cargo.png";
 import LogoTravel from "@/app/assets/images/logo-travel.png";
 
+import HomeBannerMain from "@/app/assets/images/home-banner-main.png";
+
 export default function Home() {
   return (
     <>
@@ -21,8 +23,8 @@ export default function Home() {
       <header className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1494412574643-35d324688b33?q=80&w=2080&auto=format&fit=crop"
-            alt="Logistics and Travel"
+            src={HomeBannerMain.src}
+            alt="China-Thailand Logistics and Travel"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white/10"></div>
