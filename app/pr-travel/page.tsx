@@ -1,9 +1,14 @@
 import { Plane, ChevronRight, MapPin, Camera, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import { getImagePath } from '@/app/utils/path';
-// Removed old image imports
+import ServicePremium from '@/app/assets/images/service-premium.jpg';
+import ServiceDesign from '@/app/assets/images/service-design.jpg';
+import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
+import ServiceCar from '@/app/assets/images/service-car-new.jpg';
+// Pr-Travel Images for Decoration
 import PrTravel1 from '@/app/assets/images/pr-travel-1.jpg';
 import PrTravel3 from '@/app/assets/images/pr-travel-3.jpg';
+import PrTravel5 from '@/app/assets/images/pr-travel-5.jpg';
 import PrTravel6 from '@/app/assets/images/pr-travel-6.jpg';
 import PrTravel7 from '@/app/assets/images/pr-travel-7.jpg';
 import PrTravel12 from '@/app/assets/images/pr-travel-12.jpg';
@@ -56,25 +61,25 @@ export default function PrTravelPage() {
                     <div className="flex flex-col gap-12 max-w-5xl mx-auto">
                         {[
                             {
-                                img: PrTravel3,
+                                img: ServicePremium,
                                 title: "Premium Package",
                                 desc: "เที่ยวจีนระดับพรีเมียม เส้นทางยอดนิยม ปักกิ่ง เซี่ยงไฮ้ กวางโจว ดูแลครบจบทุกขั้นตอน",
                                 isLocal: false
                             },
                             {
-                                img: PrTravel6,
+                                img: ServiceDesign,
                                 title: "Design Your Trip",
                                 desc: "ออกแบบทริปในฝันของคุณ ไม่ว่าจะเป็นครอบครัว เพื่อน หรือดูงานองค์กร ตามงบประมาณที่คุณต้องการ",
                                 isLocal: false
                             },
                             {
-                                img: PrTravel12,
+                                img: ServiceFactory,
                                 title: "Factory Tour & Business",
                                 desc: "เหมาะสำหรับเจ้าของแบรนด์และนักธุรกิจ พาเยี่ยมชมโรงงานจริง ดูกระบวนการผลิต พบปะซัพพลายเออร์ พร้อมศึกษาต้นทุนและมาตรฐานสินค้า",
                                 isLocal: false
                             },
                             {
-                                img: PrTravel1,
+                                img: ServiceCar,
                                 title: "Car Booking Service",
                                 desc: "บริการรถพร้อมคนขับ (เก๋ง/ตู้/SUV) สำหรับเดินทางในจีน รับ-ส่งสนามบิน และดูแลตลอดทริปธุรกิจหรือท่องเที่ยว",
                                 isLocal: false
@@ -111,9 +116,12 @@ export default function PrTravelPage() {
             {/* Popular Destinations (Bento Grid) */}
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-8 max-w-6xl">
-                    <div className="flex items-center gap-3 mb-8">
+                    <div className="flex items-center gap-3 mb-8 relative">
                         <MapPin className="text-red-500 fill-red-100" size={32} />
                         <h2 className="text-xl md:text-3xl font-bold text-[#1F2937] whitespace-nowrap">สถานที่ท่องเที่ยวยอดนิยม</h2>
+                        <div className="hidden md:block absolute -right-16 -top-12 rotate-12">
+                            <Image src={PrTravel5} alt="Love Travel" width={100} height={100} className="w-24 h-auto drop-shadow-md" />
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:h-[600px]">
@@ -186,6 +194,9 @@ export default function PrTravelPage() {
                     <div className="text-center mb-16 relative">
                         {/* Decorative Elements */}
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-20 bg-primary/5 rounded-full blur-3xl -z-10"></div>
+                        <div className="absolute -left-4 md:left-20 top-0 hidden lg:block animate-bounce-slow">
+                            <Image src={PrTravel12} alt="Happy Travel" width={120} height={120} className="w-28 h-auto drop-shadow-lg" />
+                        </div>
                         <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] mb-6">
                             ทำไมต้องเดินทางกับ <span className="text-primary">PR TRAVEL</span>
                         </h2>
