@@ -1,4 +1,12 @@
 # PR Global Group Website
+> **⚠️ IMPORTANT: IF YOU SEE THIS PAGE, THE WEBSITE IS NOT CONFIGURED CORRECTLY.**
+>
+> You are currently viewing the *Source Code README*. To view the actual website, you must configure GitHub Pages to serve the `gh-pages` branch.
+>
+> **1. Go to Settings > Pages** in this repository.
+> **2. Under 'Branch', change `main` to `gh-pages`.**
+> **3. Click Save.**
+> **4. Visit: [https://wasingsd.github.io/prgbgroup/](https://wasingsd.github.io/prgbgroup/)**
 
 Official website for **PR Global Group**, a comprehensive China-Thailand logistics and travel service provider.
 
