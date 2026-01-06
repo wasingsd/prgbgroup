@@ -7,10 +7,13 @@ import ServiceFactory from '@/app/assets/images/service-factory-new.jpg';
 import ServiceCar from '@/app/assets/images/service-car-new.jpg';
 // Pr-Travel Images for Decoration
 import PrTravel1 from '@/app/assets/images/pr-travel-1.jpg';
+import PrTravel2 from '@/app/assets/images/pr-travel-2.jpg';
 import PrTravel3 from '@/app/assets/images/pr-travel-3.jpg';
+import PrTravel4 from '@/app/assets/images/pr-travel-4.jpg';
 import PrTravel5 from '@/app/assets/images/pr-travel-5.jpg';
 import PrTravel6 from '@/app/assets/images/pr-travel-6.jpg';
 import PrTravel7 from '@/app/assets/images/pr-travel-7.jpg';
+import PrTravel8 from '@/app/assets/images/pr-travel-8.jpg';
 import PrTravel12 from '@/app/assets/images/pr-travel-12.jpg';
 import TravelMascot from '@/app/assets/images/travel-mascot.png';
 
@@ -60,8 +63,11 @@ export default function PrTravelPage() {
                 <div className="absolute top-40 left-10 w-24 opacity-80 z-10 pointer-events-none hidden lg:block animate-pulse">
                     <Image src={PrTravel1} alt="Bus Mascot" width={150} height={150} className="w-full h-auto -rotate-12" />
                 </div>
-                <div className="container mx-auto px-8">
+                <div className="container mx-auto px-8 relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
+                    <div className="flex justify-center mb-8">
+                        <Image src={PrTravel2} alt="Welcome Alpaca" width={100} height={100} className="w-20 h-auto animate-bounce-slow" />
+                    </div>
                     <p className="text-center text-[#1F2937]/70 mb-12 max-w-2xl mx-auto text-lg">เราออกแบบการเดินทางได้ตามความต้องการ ไม่ว่าจะเป็นทริปธุรกิจหรือพักผ่อน</p>
 
 
@@ -107,6 +113,17 @@ export default function PrTravelPage() {
                                     <div className="absolute bottom-4 left-4 md:bottom-auto md:top-6 md:left-6 text-white">
                                         <MapPin size={32} className="mb-1 drop-shadow-md" />
                                     </div>
+                                    {/* Decorative Mascot for Specific Cards */}
+                                    {idx === 0 && (
+                                        <div className="absolute bottom-2 right-2 w-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <Image src={PrTravel4} alt="Plane Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg" />
+                                        </div>
+                                    )}
+                                    {idx === 1 && (
+                                        <div className="absolute bottom-2 right-2 w-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <Image src={PrTravel8} alt="Megaphone Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg scale-x-[-1]" />
+                                        </div>
+                                    )}
                                 </div>
                                 <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
                                     <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#1F2937] group-hover:text-primary transition-colors">{tour.title}</h3>
