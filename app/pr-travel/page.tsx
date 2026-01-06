@@ -56,9 +56,7 @@ export default function PrTravelPage() {
 
             {/* Tour Types */}
             <section className="py-20 bg-white relative">
-                <div className="absolute top-20 left-10 w-32 opacity-90 z-10 pointer-events-none hidden lg:block animate-pulse">
-                    <Image src={MascotStand} alt="Stand Mascot" width={150} height={250} className="w-full h-auto drop-shadow-lg" />
-                </div>
+
                 <div className="container mx-auto px-8 relative">
                     <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-[#1F2937]">รูปแบบการเดินทาง</h2>
                     <div className="flex justify-center mb-8">
