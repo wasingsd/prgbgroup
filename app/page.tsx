@@ -44,7 +44,9 @@ export default function Home() {
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-3xl mx-auto">
             <Link
-              href="/pr-cargo"
+              href="https://pr-cargo.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative w-full sm:w-1/2 bg-white hover:bg-gray-50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between overflow-hidden border-l-4 border-primary"
             >
               <div>

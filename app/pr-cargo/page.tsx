@@ -38,8 +38,8 @@ export default function PrCargoPage() {
                 <div className="container mx-auto px-8 relative z-10 text-center">
                     {/* Logo in Banner */}
                     <div className="flex justify-center mb-8">
-                        <div className="w-48 h-48 md:w-64 md:h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-6 border border-white/20 shadow-2xl">
-                            <Image src={LogoCargo} alt="PR Cargo Logo" className="w-full h-full object-contain drop-shadow-lg" />
+                        <div className="w-48 h-48 md:w-64 md:h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-2xl overflow-hidden">
+                            <Image src={LogoCargo} alt="PR Cargo Logo" className="w-full h-full object-cover drop-shadow-lg scale-125" />
                         </div>
                     </div>
 

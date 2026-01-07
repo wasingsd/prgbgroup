@@ -51,9 +51,9 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <button className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-full font-medium transition-all shadow-md text-sm">
+          <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-full font-medium transition-all shadow-md text-sm">
             ขอใบเสนอราคา
-          </button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,9 +79,9 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <button className="bg-primary text-white w-full py-3 rounded-lg font-bold">
+            <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary text-white w-full py-3 rounded-lg font-bold text-center">
               ขอใบเสนอราคา
-            </button>
+            </Link>
           </div>
         </div>
       )}

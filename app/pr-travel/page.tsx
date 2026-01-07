@@ -33,8 +33,8 @@ export default function PrTravelPage() {
                 <div className="container mx-auto px-8 relative z-10 text-center">
                     {/* Logo in Banner */}
                     <div className="flex justify-center mb-8">
-                        <div className="w-48 h-48 md:w-64 md:h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center p-6 border border-white/20 shadow-2xl">
-                            <Image src={LogoTravel} alt="PR Travel Logo" className="w-full h-full object-contain drop-shadow-lg" />
+                        <div className="w-48 h-48 md:w-64 md:h-64 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center border border-white/20 shadow-2xl overflow-hidden">
+                            <Image src={LogoTravel} alt="PR Travel Logo" className="w-full h-full object-cover drop-shadow-lg scale-125" />
                         </div>
                     </div>
                     <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight drop-shadow-md">
@@ -108,16 +108,8 @@ export default function PrTravelPage() {
                                         <MapPin size={32} className="mb-1 drop-shadow-md" />
                                     </div>
                                     {/* Decorative Mascot for Specific Cards */}
-                                    {idx === 0 && (
-                                        <div className="absolute bottom-2 right-2 w-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <Image src={MascotPlane} alt="Plane Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg" />
-                                        </div>
-                                    )}
-                                    {idx === 1 && (
-                                        <div className="absolute bottom-2 right-2 w-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            <Image src={MascotPresent} alt="Megaphone Mascot" width={100} height={100} className="w-full h-auto drop-shadow-lg scale-x-[-1]" />
-                                        </div>
-                                    )}
+
+
                                 </div>
                                 <div className="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
                                     <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#1F2937] group-hover:text-primary transition-colors">{tour.title}</h3>
