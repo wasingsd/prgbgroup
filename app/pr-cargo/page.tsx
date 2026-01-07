@@ -1,4 +1,5 @@
 import { Ship, Truck, Anchor, FileText, Box } from 'lucide-react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 
@@ -49,9 +50,9 @@ export default function PrCargoPage() {
                     <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 font-light">
                         ผู้เชี่ยวชาญด้านโลจิสติกส์ บริการขนส่งทางบก ทางเรือ พร้อมเคลียร์ภาษีและเดินพิธีการศุลกากร <br className="hidden md:block" /> รวดเร็ว ปลอดภัย ตรวจสอบสถานะได้ 24 ชม.
                     </p>
-                    <button className="bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1 relative z-10">
+                    <Link href="https://lin.ee/6APhcPD" target="_blank" className="inline-block bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1 relative z-10">
                         ขอเรทราคาขนส่ง
-                    </button>
+                    </Link>
                 </div>
             </div>
 
