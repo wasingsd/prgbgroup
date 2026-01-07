@@ -46,16 +46,16 @@ export default function Home() {
               className="group relative w-full sm:w-1/2 bg-white hover:bg-gray-50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between overflow-hidden border-l-4 border-primary"
             >
               <div>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
                     <img src={LogoCargo.src} alt="PR Cargo Logo" className="w-full h-full object-cover" />
                   </div>
-                  <span className="font-bold text-2xl text-[#1F2937]">PR CARGO</span>
+                  <span className="font-bold text-xl text-[#1F2937]">PR CARGO</span>
                 </div>
-                <p className="text-base text-[#1F2937] ml-1">บริการนำเข้าสินค้าจีน-ไทย</p>
+                <p className="text-sm text-[#1F2937]">บริการนำเข้าสินค้าจีน-ไทย</p>
               </div>
               <div className="bg-gray-100 p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-                <ArrowRight size={24} color="black" />
+                <ArrowRight size={20} color="black" />
               </div>
             </Link>
 
@@ -64,16 +64,16 @@ export default function Home() {
               className="group relative w-full sm:w-1/2 bg-primary hover:bg-primary-hover p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between text-white border-l-4 border-white/30"
             >
               <div>
-                <div className="flex items-center gap-4 mb-2">
-                  <div className="w-14 h-14 rounded-full overflow-hidden border border-white/20 shadow-sm flex-shrink-0">
+                <div className="flex items-center gap-3 mb-1">
+                  <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-sm flex-shrink-0">
                     <img src={LogoTravel.src} alt="PR Travel Logo" className="w-full h-full object-cover" />
                   </div>
-                  <span className="font-bold text-2xl">PR TRAVEL</span>
+                  <span className="font-bold text-xl">PR TRAVEL</span>
                 </div>
-                <p className="text-base text-white/90 ml-1">บริการทัวร์และดูงานครบวงจร</p>
+                <p className="text-sm text-white/90">บริการทัวร์และดูงานครบวงจร</p>
               </div>
               <div className="bg-white/20 p-2 rounded-full group-hover:bg-white group-hover:text-primary transition-colors">
-                <ArrowRight size={24} />
+                <ArrowRight size={20} />
               </div>
             </Link>
           </div>
