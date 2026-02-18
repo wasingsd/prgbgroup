@@ -43,9 +43,14 @@ export default function PrTravelPage() {
                     <p className="text-xl text-white/90 max-w-2xl mx-auto mb-10 font-light">
                         บริการจัดกรุ๊ปทัวร์ส่วนตัว ทัวร์ดูงาน และเส้นทางท่องเที่ยว Unseen ในจีน <br className="hidden md:block" /> ดูแลดุจญาติมิตร โดยทีมงานมืออาชีพ
                     </p>
-                    <button className="bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1 relative z-10">
+                    <a
+                        href="https://lin.ee/TdYyP8f"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-primary hover:bg-primary-hover text-white text-lg px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:shadow-primary/40 transform hover:-translate-y-1 relative z-10 inline-block"
+                    >
                         ออกแบบทริปของคุณ
-                    </button>
+                    </a>
                     {/* Floating Mascots in Hero */}
                     {/* Floating Mascots in Hero */}
                     <div className="absolute right-[5%] bottom-[5%] hidden lg:block animate-bounce-slow">
