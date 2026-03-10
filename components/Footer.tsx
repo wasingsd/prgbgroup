@@ -26,7 +26,7 @@ export default function Footer() {
                             <li><Link href="/pr-cargo" className="hover:text-white transition-colors text-left">PR CARGO นำเข้าสินค้า</Link></li>
                             <li><Link href="/pr-travel" className="hover:text-white transition-colors text-left">PR TRAVEL ท่องเที่ยว</Link></li>
                             <li><a href="#" className="hover:text-white transition-colors">บริการ Sourcing</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors">ตรวจสอบสถานะพัสดุ</a></li>
+                            <li><a href="https://pr-cargo.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">ตรวจสอบสถานะพัสดุ</a></li>
                         </ul>
                     </div>
 

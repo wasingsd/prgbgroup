@@ -37,16 +37,14 @@ export default function Home() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             เชื่อมต่อโลกธุรกิจ <br className="md:hidden" /> และการเดินทางของคุณ
           </h1>
-          <p className="text-white text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+          <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-10 font-light lg:whitespace-nowrap">
             กลุ่มบริษัทให้บริการขนส่งนำเข้าสินค้าจีน–ไทย และบริการท่องเที่ยว/ดูงานแบบครบวงจร
           </p>
 
           {/* Dual CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-3xl mx-auto">
             <Link
-              href="https://pr-cargo.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/pr-cargo"
               className="group relative w-full sm:w-1/2 bg-white hover:bg-gray-50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between overflow-hidden border-l-4 border-primary"
             >
               <div>

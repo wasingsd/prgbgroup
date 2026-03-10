@@ -39,7 +39,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden lg:flex items-center space-x-6">
           {menuItems.map((item) => (
             <Link
               key={item.href}
@@ -51,14 +51,19 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary hover:bg-primary-hover text-white px-5 py-2 rounded-full font-medium transition-all shadow-md text-sm">
-            ขอใบเสนอราคา
-          </Link>
+          <div className="flex items-center space-x-3 ml-2">
+            <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full font-medium transition-all shadow-md text-sm whitespace-nowrap">
+              ขอใบเสนอราคา
+            </Link>
+            <Link href="https://pr-cargo.com/" target="_blank" className={`px-4 py-2 rounded-full font-medium transition-all shadow-sm text-sm border-2 whitespace-nowrap ${isScrolled || !isHome ? 'border-primary text-primary hover:bg-primary hover:text-white' : 'border-white text-white hover:bg-white hover:text-primary'}`}>
+              เข้าสู่ระบบ / สมัครสมาชิก
+            </Link>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className={`md:hidden ${isScrolled || !isHome ? 'text-primary' : 'text-white'}`}
+          className={`lg:hidden ${isScrolled || !isHome ? 'text-primary' : 'text-white'}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -67,7 +72,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-xl">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl">
           <div className="flex flex-col p-4 space-y-4">
             {menuItems.map((item) => (
               <Link
@@ -81,6 +86,9 @@ const Navbar = () => {
             ))}
             <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary text-white w-full py-3 rounded-lg font-bold text-center">
               ขอใบเสนอราคา
+            </Link>
+            <Link href="https://pr-cargo.com/" target="_blank" className="bg-white border-2 border-primary text-primary hover:bg-gray-50 w-full py-3 rounded-lg font-bold text-center">
+              เข้าสู่ระบบ / สมัครสมาชิก
             </Link>
           </div>
         </div>
