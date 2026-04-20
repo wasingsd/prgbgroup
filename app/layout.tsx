@@ -24,9 +24,6 @@ export const metadata: Metadata = {
     "ขนส่งสินค้าจากจีนมาไทย",
     "นำเข้าจีนครบวงจร"
   ],
-  icons: {
-    icon: '/icon.png?v=2',
-  },
 };
 
 export default function RootLayout({
