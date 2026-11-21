@@ -61,8 +61,10 @@ export default function Home() {
               </div>
             </Link>
 
-            <Link
-              href="/pr-travel"
+            <a
+              href="https://prgb-travel-group.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative w-full sm:w-1/2 bg-primary hover:bg-primary-hover p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between text-white border-l-4 border-white/30"
             >
               <div>
@@ -77,7 +79,7 @@ export default function Home() {
               <div className="bg-white/20 p-2 rounded-full group-hover:bg-white group-hover:text-primary transition-colors">
                 <ArrowRight size={20} />
               </div>
-            </Link>
+            </a>
           </div>
         </div>
       </header>
@@ -315,9 +317,14 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-8 text-center">
-                <Link href="/pr-travel" className="inline-block bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
-                  ดูโปรแกรมทัวร์
-                </Link>
+                <a
+                  href="https://prgb-travel-group.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg"
+                >
+                  ดูโปรแกรมทัวร์ทั้งหมด
+                </a>
               </div>
             </div>
           </div>

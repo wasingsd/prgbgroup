@@ -19,10 +19,10 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
-    { href: '/', label: 'หน้าแรก' },
-    { href: '/pr-cargo', label: 'PR-Cargo' },
-    { href: '/pr-travel', label: 'PR-Travel' },
-    { href: '/contact', label: 'ติดต่อเรา' },
+    { href: '/', label: 'หน้าแรก', isExternal: false },
+    { href: '/pr-cargo', label: 'PR-Cargo', isExternal: false },
+    { href: 'https://prgb-travel-group.vercel.app', label: 'PR-Travel', isExternal: true },
+    { href: '/contact', label: 'ติดต่อเรา', isExternal: false },
   ];
 
   const isHome = pathname === '/';
@@ -41,15 +41,29 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-6">
           {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`text-sm font-bold hover:text-primary transition-colors ${pathname === item.href ? 'text-primary' :
-                (isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-sm')
+            item.isExternal ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-sm font-bold hover:text-primary transition-colors ${
+                  isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-sm'
                 }`}
-            >
-              {item.label}
-            </Link>
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-sm font-bold hover:text-primary transition-colors ${pathname === item.href ? 'text-primary' :
+                  (isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-sm')
+                  }`}
+              >
+                {item.label}
+              </Link>
+            )
           ))}
           <div className="flex items-center space-x-3 ml-2">
             <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full font-medium transition-all shadow-md text-sm whitespace-nowrap">
@@ -75,14 +89,27 @@ const Navbar = () => {
         <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl">
           <div className="flex flex-col p-4 space-y-4">
             {menuItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-left font-medium py-2 border-b border-gray-100 ${pathname === item.href ? 'text-primary' : 'text-[#1F2937]'}`}
-              >
-                {item.label}
-              </Link>
+              item.isExternal ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-left font-medium py-2 border-b border-gray-100 text-[#1F2937] hover:text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`text-left font-medium py-2 border-b border-gray-100 ${pathname === item.href ? 'text-primary' : 'text-[#1F2937]'}`}
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
             <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary text-white w-full py-3 rounded-lg font-bold text-center">
               ขอใบเสนอราคา
