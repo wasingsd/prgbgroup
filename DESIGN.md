@@ -181,7 +181,7 @@ Use the existing alpaca art as a welcoming service guide. The home panel pairs i
 
 ## Do's and Don'ts
 
-TikTok posts use the official `player/v1` iframe directly, without the legacy DOM-mutating embed script. Preserve portrait proportions, visible original-post links, readiness/error feedback, timeout and retry. Validate player messages by both origin and iframe window. Autoplay restrictions leave manual playback available; unavailable media uses an explicit fallback rather than an endless skeleton. Video playback is subject to TikTok availability; the adjacent original-post link must always remain usable.
+TikTok posts use the official `player/v1` iframe directly. Once visible, keep the iframe mounted and unobstructed: HTML load makes it interactive, while readiness and playback messages are separate evidence. Missing messages or buffering timeouts must never hide or remove the player. Place loading, slow-network and explicit player-error feedback below it, with retry and an always-visible original-post link. Validate messages by both origin and iframe window; autoplay restrictions preserve manual playback. Verify actual clicks without synthetic readiness, and measure real playback progress before claiming playback works.
 
 - **Do** preserve the approved white corporate world, Cargo red, black type, limited yellow, and alpaca identity.
 - **Do** use the shared typography, rounded actions, calm borders, and responsive container before introducing new styling.

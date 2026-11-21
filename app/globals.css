@@ -840,6 +840,22 @@ textarea {
   color: var(--primary);
   font-weight: 600;
 }
+.tiktok-notice {
+  padding: 0 18px 18px;
+  color: var(--text-secondary);
+  font-size: var(--text-small);
+}
+.tiktok-notice p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tiktok-notice button {
+  background: none;
+  border: 0;
+  padding: 8px 0 0;
+  font-size: inherit;
+}
 .contact-banner {
   background: var(--primary);
   color: white;

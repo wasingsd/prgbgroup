@@ -189,20 +189,21 @@ const report = [];
             "legacy DOM-mutating embed script must not load",
           );
           let silentPlayer = false;
+          let automaticReadiness = false;
           await page.route("https://www.tiktok.com/player/v1/**", (route) =>
             route.fulfill({
               status: 200,
               contentType: "text/html",
               body: silentPlayer
-                ? "<p>Silent player test fixture</p>"
-                : `<script>
-              function emit(type,value){parent.postMessage({'x-tiktok-player':true,type,value},'*')}
-              setTimeout(()=>emit('onPlayerReady'),100);
-              addEventListener('message',event=>{
-                if(event.data?.testCommand==='error') emit('onPlayerError',{errorCode:2001,errorType:'SERVER_ERROR'});
-                if(event.data?.testCommand==='autoplayBlocked') { emit('onError',1); emit('onPlayerError',{errorCode:3002,errorType:'AUTOPLAY_ERROR'}); }
-              });
-            </script>`,
+                ? `<button onclick="this.textContent='Clicked'">Play without readiness</button>`
+                : `<button style="width:100%;height:90vh" onclick="emit('onStateChange',1)">Play without readiness</button><script>
+                function emit(type,value){parent.postMessage({'x-tiktok-player':true,type,value},'*')}
+                if (${automaticReadiness}) setTimeout(()=>emit('onPlayerReady'),100);
+                addEventListener('message',event=>{
+                  if(event.data?.testCommand==='error') emit('onPlayerError',{errorCode:2001,errorType:'SERVER_ERROR'});
+                  if(event.data?.testCommand==='autoplayBlocked') { emit('onError',1); emit('onPlayerError',{errorCode:3002,errorType:'AUTOPLAY_ERROR'}); }
+                });
+              </script>`,
             }),
           );
           const posts = page.locator("[data-tiktok-post]");
@@ -210,8 +211,14 @@ const report = [];
           const firstPlayer = posts.first().locator(".tiktok-player");
           await posts
             .first()
+            .frameLocator("iframe")
+            .getByRole("button", { name: "Play without readiness" })
+            .click();
+          await posts
+            .first()
             .locator('.tiktok-player[data-status="ready"]')
             .waitFor();
+          automaticReadiness = true;
           const src = await posts.first().locator("iframe").getAttribute("src");
           assert.match(src, /tiktok\.com\/player\/v1\/7545742823274892551/);
           assert.match(src, /autoplay=0/);
@@ -219,7 +226,6 @@ const report = [];
             await posts.nth(1).locator("iframe").getAttribute("src"),
             /7448006782632381714/,
           );
-          // A spoofed host message must not impersonate the cross-origin player.
           await page.evaluate(() =>
             window.postMessage(
               {
@@ -240,11 +246,10 @@ const report = [];
                 "https://www.tiktok.com",
               ),
             );
-          assert.equal(
-            await firstPlayer.getAttribute("data-status"),
-            "ready",
-            "autoplay restrictions must keep manual playback available",
-          );
+          await posts
+            .first()
+            .locator('.tiktok-player[data-status="interactive"]')
+            .waitFor();
           await posts
             .first()
             .locator("iframe")
@@ -256,17 +261,17 @@ const report = [];
             );
           await posts
             .first()
-            .getByRole("heading", { name: "เปิดโพสต์นี้บน TikTok" })
+            .locator('.tiktok-player[data-status="unavailable"]')
             .waitFor();
           assert.equal(
             await posts.first().locator("iframe").count(),
-            0,
-            "unavailable media must not leave a blank iframe",
+            1,
+            "errors must not remove a recoverable player",
           );
           assert.equal(
             await posts
               .first()
-              .getByRole("link", { name: "ดูบน TikTok", exact: true })
+              .getByRole("link", { name: "เปิดโพสต์ต้นฉบับ", exact: true })
               .getAttribute("href"),
             "https://www.tiktok.com/@korkame19/video/7545742823274892551",
           );
@@ -278,7 +283,6 @@ const report = [];
             .first()
             .locator('.tiktok-player[data-status="ready"]')
             .waitFor();
-          // A loaded HTML document with no readiness message must time out.
           await posts
             .first()
             .locator("iframe")
@@ -298,11 +302,26 @@ const report = [];
             .first()
             .getByRole("button", { name: "ลองโหลดอีกครั้ง" })
             .click();
-          await posts.first().locator("iframe").waitFor();
-          await page.clock.fastForward(12500);
           await posts
             .first()
-            .getByRole("heading", { name: "เปิดโพสต์นี้บน TikTok" })
+            .frameLocator("iframe")
+            .getByRole("button", { name: "Play without readiness" })
+            .waitFor();
+          await page.clock.fastForward(12500);
+          assert.equal(
+            await posts.first().locator("iframe").count(),
+            1,
+            "absence of readiness must not unmount the player",
+          );
+          await posts
+            .first()
+            .frameLocator("iframe")
+            .getByRole("button", { name: "Play without readiness" })
+            .click();
+          await posts
+            .first()
+            .frameLocator("iframe")
+            .getByRole("button", { name: "Clicked", exact: true })
             .waitFor();
           report.push(
             `${name}: applied Noto Sans Thai glyphs and readable type sizes passed; TikTok ready/error/retry/timeout/spoof protection and original links passed (mocked player)`,
