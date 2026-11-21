@@ -1,127 +1,172 @@
 "use client";
 
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Menu, MessageCircle, Phone, X } from "lucide-react";
+import BrandLogo from "./BrandLogo";
+import { CARGO_URL, LINE_URL, PHONE, TRAVEL_URL } from "@/app/utils/site";
 
-const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
+const links = [
+  { href: "/", label: "หน้าแรก", external: false },
+  { href: "/pr-cargo", label: "PR Cargo", external: false },
+  { href: TRAVEL_URL, label: "PR Travel", external: true },
+  { href: "/contact", label: "ติดต่อเรา", external: false },
+];
+
+export default function Navbar() {
+  const pathname = usePathname().replace(/\/$/, "") || "/";
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    if (!open) return;
+    const dismiss = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpen(false);
+        toggle.current?.focus();
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const menuItems = [
-    { href: '/', label: 'หน้าแรก', isExternal: false },
-    { href: '/pr-cargo', label: 'PR-Cargo', isExternal: false },
-    { href: 'https://prgb-travel-group.vercel.app', label: 'PR-Travel', isExternal: true },
-    { href: '/contact', label: 'ติดต่อเรา', isExternal: false },
-  ];
-
-  const isHome = pathname === '/';
+    window.addEventListener("keydown", dismiss);
+    return () => window.removeEventListener("keydown", dismiss);
+  }, [open]);
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled || !isHome ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-4 md:px-6 max-w-6xl flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 cursor-pointer">
-          <div className="w-10 h-10 bg-primary rounded flex items-center justify-center text-white font-bold text-xl">PR</div>
-          <div className={`font-bold text-xl tracking-tight leading-tight ${isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-md'}`}>
-            PR GLOBAL <br /><span className="text-sm font-normal">GROUP</span>
+    <header className="site-header">
+      <a className="skip-link" href="#main-content">
+        ข้ามไปยังเนื้อหา
+      </a>
+      <div className="utility-bar">
+        <div className="site-container utility-inner">
+          <span>เชื่อมต่อธุรกิจและการเดินทาง จีน–ไทย</span>
+          <div>
+            <a href={`tel:${PHONE}`}>
+              <Phone size={13} /> {PHONE}
+            </a>
+            <a href={LINE_URL} target="_blank" rel="noopener noreferrer">
+              <MessageCircle size={13} /> LINE: @prcargo
+            </a>
           </div>
+        </div>
+      </div>
+      <div className="site-container nav-inner">
+        <Link
+          href="/"
+          aria-label="PR Global Group หน้าแรก"
+          onClick={() => setOpen(false)}
+        >
+          <BrandLogo />
         </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-6">
-          {menuItems.map((item) => (
-            item.isExternal ? (
+        <nav className="desktop-nav" aria-label="เมนูหลัก">
+          {links.map(({ href, label, external }) =>
+            external ? (
               <a
-                key={item.href}
-                href={item.href}
+                key={href}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`text-sm font-bold hover:text-primary transition-colors ${
-                  isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-sm'
-                }`}
+                className="nav-link"
               >
-                {item.label}
+                {label}
+                <ArrowUpRight size={14} />
+                <span className="sr-only"> เปิดเว็บไซต์ใหม่</span>
               </a>
             ) : (
               <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-bold hover:text-primary transition-colors ${pathname === item.href ? 'text-primary' :
-                  (isScrolled || !isHome ? 'text-[#1F2937]' : 'text-white drop-shadow-sm')
-                  }`}
+                key={href}
+                href={href}
+                className={`nav-link ${pathname === href ? "active" : ""}`}
+                aria-current={pathname === href ? "page" : undefined}
               >
-                {item.label}
+                {label}
               </Link>
-            )
-          ))}
-          <div className="flex items-center space-x-3 ml-2">
-            <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-full font-medium transition-all shadow-md text-sm whitespace-nowrap">
-              ขอใบเสนอราคา
-            </Link>
-            <Link href="https://pr-cargo.com/" target="_blank" className={`px-4 py-2 rounded-full font-medium transition-all shadow-sm text-sm border-2 whitespace-nowrap ${isScrolled || !isHome ? 'border-primary text-primary hover:bg-primary hover:text-white' : 'border-white text-white hover:bg-white hover:text-primary'}`}>
-              เข้าสู่ระบบ / สมัครสมาชิก
-            </Link>
-          </div>
+            ),
+          )}
+        </nav>
+        <div className="nav-actions">
+          <a
+            className="login-link"
+            href={CARGO_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            เข้าสู่ระบบ / สมัครสมาชิก
+            <ArrowUpRight size={14} />
+          </a>
+          <a
+            className="button button-primary button-small"
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <MessageCircle size={17} />
+            ขอใบเสนอราคา
+          </a>
         </div>
-
-        {/* Mobile Menu Button */}
         <button
-          className={`lg:hidden ${isScrolled || !isHome ? 'text-primary' : 'text-white'}`}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          ref={toggle}
+          className="menu-toggle"
+          aria-label={open ? "ปิดเมนู" : "เปิดเมนู"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {open ? <X /> : <Menu />}
         </button>
       </div>
-
-      {/* Mobile Menu Dropdown */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white shadow-xl">
-          <div className="flex flex-col p-4 space-y-4">
-            {menuItems.map((item) => (
-              item.isExternal ? (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-left font-medium py-2 border-b border-gray-100 text-[#1F2937] hover:text-primary transition-colors"
-                >
-                  {item.label}
-                </a>
-              ) : (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`text-left font-medium py-2 border-b border-gray-100 ${pathname === item.href ? 'text-primary' : 'text-[#1F2937]'}`}
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-            <Link href="https://lin.ee/6APhcPD" target="_blank" className="bg-primary text-white w-full py-3 rounded-lg font-bold text-center">
+      <nav
+        id="mobile-navigation"
+        className="mobile-nav"
+        aria-label="เมนูหลักบนมือถือ"
+        hidden={!open}
+      >
+        <div className="site-container">
+          {links.map(({ href, label, external }) =>
+            external ? (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+              >
+                {label}
+                <ArrowUpRight size={16} />
+                <span className="sr-only"> เปิดเว็บไซต์ใหม่</span>
+              </a>
+            ) : (
+              <Link
+                key={href}
+                href={href}
+                aria-current={pathname === href ? "page" : undefined}
+                onClick={() => setOpen(false)}
+              >
+                {label}
+              </Link>
+            ),
+          )}
+          <div className="mobile-actions">
+            <a
+              className="button button-primary"
+              href={LINE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               ขอใบเสนอราคา
-            </Link>
-            <Link href="https://pr-cargo.com/" target="_blank" className="bg-white border-2 border-primary text-primary hover:bg-gray-50 w-full py-3 rounded-lg font-bold text-center">
+              <MessageCircle size={17} />
+            </a>
+            <a
+              className="button button-outline"
+              href={CARGO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               เข้าสู่ระบบ / สมัครสมาชิก
-            </Link>
+              <ArrowUpRight size={16} />
+            </a>
           </div>
         </div>
-      )}
-    </nav>
+      </nav>
+    </header>
   );
-};
-
-export default Navbar;
+}

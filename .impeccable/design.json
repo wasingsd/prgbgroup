@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T07:07:01.0555949Z",
+  "title": "Design System: PR Global Group",
+  "extensions": {
+    "motion": [
+      {
+        "name": "button-state",
+        "value": "background-color 0.2s, color 0.2s, border-color 0.2s",
+        "purpose": "Pill button state transitions."
+      },
+      {
+        "name": "field-border",
+        "value": "border-color 0.15s",
+        "purpose": "Form-control border feedback."
+      },
+      {
+        "name": "shipment-route",
+        "value": "5s ease-in-out infinite; translate -18px to 18px and back",
+        "purpose": "Small route truck in the home mascot panel."
+      },
+      {
+        "name": "mascot-arrival",
+        "value": "0.8s cubic-bezier(0.16, 1, 0.3, 1) both; translateY(15px) and blur(2px) to translateY(0) and blur(0)",
+        "purpose": "Home mascot arrival."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto",
+        "purpose": "Applied under prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop-max",
+        "value": "1200px"
+      },
+      {
+        "name": "mobile-navigation-max",
+        "value": "1050px"
+      },
+      {
+        "name": "desktop-navigation-min",
+        "value": "1051px"
+      },
+      {
+        "name": "mobile-layout-max",
+        "value": "760px"
+      },
+      {
+        "name": "small-mobile-max",
+        "value": "370px"
+      }
+    ]
+  },
+  "narrative": {
+    "northStar": "White-led corporate Cargo",
+    "rules": [
+      {
+        "name": "The White-led Rule",
+        "body": "Keep the broad page canvas white or soft neutral. Concentrated red belongs to actions, emphasis, selected states, and the closing contact band.",
+        "section": "colors"
+      },
+      {
+        "name": "Flat tonal depth",
+        "body": "Use tonal surfaces and dividers; the implemented system has no box-shadow vocabulary.",
+        "section": "elevation"
+      },
+      {
+        "name": "Keyboard focus",
+        "body": "Retain the global 3px primary outline with 5px offset. Fields use a 2px primary outline with 2px offset and primary border.",
+        "section": "components"
+      },
+      {
+        "name": "Responsive containment",
+        "body": "Keep rate tables inside their horizontal scroll wrapper and preserve mobile stacking and usable navigation.",
+        "section": "layout"
+      }
+    ],
+    "dos": [
+      "Do preserve the approved white corporate world, Cargo red, black type, limited yellow, and alpaca identity.",
+      "Do use the shared typography, rounded actions, calm borders, and responsive container.",
+      "Do honor prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't reintroduce the dark full-screen photo-overlay hero or the unselected promotional-poster direction.",
+      "Don't substitute Prompt for Noto Sans Thai and Inter.",
+      "Don't introduce decorative shadows as a default surface treatment."
+    ]
+  }
+}

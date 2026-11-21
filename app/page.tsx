@@ -1,449 +1,425 @@
-import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle, Users, Ship, Plane, ShieldCheck, TrendingUp, Monitor, Phone, Warehouse, Truck, ClipboardCheck, Ticket, Languages, Globe, Map } from 'lucide-react';
-
-
-
-import Script from "next/script";
-import { getImagePath } from "@/app/utils/path";
+import Link from "next/link";
+import TikTokPost from "@/components/TikTokPost";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
+  Globe,
+  Languages,
+  MapPin,
+  MessageCircle,
+  Monitor,
+  PackageCheck,
+  Phone,
+  Plane,
+  ShieldCheck,
+  Ship,
+  Ticket,
+  TrendingUp,
+  Truck,
+} from "lucide-react";
+import Mascot from "@/app/assets/images/mascot-telescope-box.png";
+import MascotLaptop from "@/app/assets/images/mascot-laptop.png";
 import IconTransport from "@/app/assets/images/icon-transport.png";
 import IconTax from "@/app/assets/images/icon-tax.png";
 import IconWarehouse from "@/app/assets/images/icon-warehouse.png";
-import MascotTelescope from "@/app/assets/images/mascot-telescope-box.png";
-import LogoCargo from "@/app/assets/images/logo-cargo-new.png";
-import LogoTravel from "@/app/assets/images/logo-travel-new.png";
+import TravelScene from "@/app/assets/images/home-banner-main.jpg";
+import { LINE_URL, PHONE, TIKTOK_URL, TRAVEL_URL } from "@/app/utils/site";
 
-import HomeBannerMain from "@/app/assets/images/home-banner-main.jpg";
+const cargoServices = [
+  {
+    image: IconTransport,
+    title: "ขนส่งด่วน ทางรถ / เรือ",
+    text: "บริการขนส่งสินค้าจากจีนมาไทย มีทั้งทางรถ (3–5 วัน) และทางเรือ (12–15 วัน) ปิดตู้ทุกวัน",
+  },
+  {
+    image: IconTax,
+    title: "เคลียร์ภาษี แบบเหมา",
+    text: "หมดกังวลเรื่องภาษีนำเข้า ด้วยบริการเคลียร์ภาษีแบบเหมาจ่าย กิโล / คิว จบในราคาเดียว",
+  },
+  {
+    image: IconWarehouse,
+    title: "โกดังพักสินค้า 2 ประเทศ",
+    text: "มีจุดรับสินค้าขนาดใหญ่ทั้งที่กวางโจวและกรุงเทพฯ พร้อมระบบติดตามสินค้า",
+  },
+];
+const advantages = [
+  {
+    icon: Monitor,
+    title: "ระบบติดตาม Real-time 24 ชม.",
+    text: "รู้สถานะสินค้าของคุณทุกขั้นตอน ผ่านระบบออนไลน์",
+  },
+  {
+    icon: TrendingUp,
+    title: "ราคาที่คุ้มค่า สำหรับ SME",
+    text: "เราเข้าใจธุรกิจคุณ ด้วยเรทราคาพิเศษที่ช่วยลดต้นทุนและเพิ่มกำไร",
+  },
+  {
+    icon: ShieldCheck,
+    title: "รับประกันสินค้า ปลอดภัย 100%",
+    text: "ดูแลสินค้าของคุณเหมือนของเราเอง",
+  },
+];
+const travelServices = [
+  {
+    icon: Ticket,
+    title: "ทัวร์ดูงานแสดงสินค้า",
+    text: "บริการพาทัวร์งานแฟร์ระดับโลก พร้อมให้คำแนะนำตลอดทริป",
+  },
+  {
+    icon: Languages,
+    title: "ล่ามเจรจาธุรกิจ",
+    text: "สื่อสารอย่างมั่นใจ ด้วยล่ามมืออาชีพช่วยเจรจาการค้าให้คุณได้เปรียบที่สุด",
+  },
+  {
+    icon: Plane,
+    title: "จองตั๋วและที่พัก",
+    text: "บริการจองตั๋วเครื่องบินและโรงแรมที่พัก ครบจบในที่เดียว",
+  },
+  {
+    icon: Globe,
+    title: "จัดทริป Private Group",
+    text: "ออกแบบโปรแกรมท่องเที่ยวสำหรับครอบครัวหรือกลุ่มเพื่อนตามใจคุณ",
+  },
+];
+const videos = [
+  { id: "7545742823274892551", type: "video" },
+  { id: "7448006782632381714", type: "photo" },
+  { id: "7582104724971801874", type: "video" },
+] as const;
 
 export default function Home() {
   return (
     <>
-      <Script src="https://www.tiktok.com/embed.js" strategy="lazyOnload" />
-      {/* Hero Section */}
-      <header className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={HomeBannerMain.src}
-            alt="China-Thailand Logistics and Travel"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-white/10"></div>
+      <section className="home-hero">
+        <div className="site-container hero-grid">
+          <div className="hero-copy">
+            <h1>
+              เชื่อมต่อโลกธุรกิจ
+              <br />
+              <span>และการเดินทาง</span>
+              <br />
+              ของคุณ
+            </h1>
+            <p>
+              จากสินค้าที่คุณเลือก สู่โอกาสที่คุณมองหา
+              <br className="desktop-break" />
+              บริการนำเข้าจีน–ไทย และท่องเที่ยว / ดูงานครบวงจร
+              <br className="desktop-break" />
+              ดูแลทุกขั้นตอน ไปด้วยกันกับ PR Global Group
+            </p>
+            <div className="hero-actions">
+              <Link href="/pr-cargo" className="button button-primary">
+                บริการ PR Cargo
+                <ArrowRight size={18} />
+              </Link>
+              <a
+                href={TRAVEL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-outline"
+              >
+                ไปเว็บไซต์ PR Travel
+                <ArrowUpRight size={18} />
+              </a>
+            </div>
+            <div className="hero-reassurance">
+              <ShieldCheck size={18} />
+              <span>โปร่งใส ใส่ใจ พร้อมให้คำปรึกษา</span>
+              <a href={LINE_URL} target="_blank" rel="noopener noreferrer">
+                คุยกับทีมงาน
+                <ArrowUpRight size={14} />
+              </a>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <div className="hero-destination">
+              <span>
+                <MapPin size={17} />
+                CHINA
+              </span>
+              <span className="route-line" aria-hidden="true">
+                <Truck size={22} />
+              </span>
+              <span>
+                THAILAND
+                <MapPin size={17} />
+              </span>
+            </div>
+            <div className="hero-art">
+              <Image
+                src={Mascot}
+                alt="มาสคอตอัลปากา PR Cargo หมวกแดง มองหาโอกาสใหม่จากกล่องพัสดุ"
+                width={520}
+                height={520}
+                priority
+                sizes="(max-width: 760px) 90vw, 42vw"
+              />
+            </div>
+            <div className="hero-art-caption">
+              <span>
+                <PackageCheck size={21} />
+                จากต้นทาง ถึงมือคุณ
+              </span>
+              <span>PR CARGO</span>
+            </div>
+          </div>
         </div>
+        <div className="site-container">
+          <div className="service-ribbon">
+            <span>
+              <Truck />
+              ขนส่งทางรถ<span>3–5 วัน</span>
+            </span>
+            <span>
+              <Ship />
+              ขนส่งทางเรือ<span>12–15 วัน</span>
+            </span>
+            <span>
+              <ShieldCheck />
+              ดูแลพิธีการศุลกากร
+            </span>
+            <span>
+              <Plane />
+              ท่องเที่ยวและดูงาน
+            </span>
+          </div>
+        </div>
+      </section>
 
-        <div className="relative z-10 container mx-auto px-8 max-w-6xl text-center mt-16">
-          <span className="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm mb-4 border border-white/30">
-            One-stop Service: Logistics & Travel
-          </span>
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            เชื่อมต่อโลกธุรกิจ <br className="md:hidden" /> และการเดินทางของคุณ
-          </h1>
-          <p className="text-white text-lg md:text-xl max-w-4xl mx-auto mb-10 font-light lg:whitespace-nowrap">
-            กลุ่มบริษัทให้บริการขนส่งนำเข้าสินค้าจีน–ไทย และบริการท่องเที่ยว/ดูงานแบบครบวงจร
-          </p>
-
-          {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-3xl mx-auto">
-            <Link
-              href="/pr-cargo"
-              className="group relative w-full sm:w-1/2 bg-white hover:bg-gray-50 p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between overflow-hidden border-l-4 border-primary"
-            >
-              <div>
-                <div className="flex items-center gap-3 mb-1">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border border-gray-100 shadow-sm flex-shrink-0">
-                    <img src={LogoCargo.src} alt="PR Cargo Logo" className="w-full h-full object-cover" />
-                  </div>
-                  <span className="font-bold text-xl text-[#1F2937]">PR CARGO</span>
-                </div>
-                <p className="text-sm text-[#1F2937]">บริการนำเข้าสินค้าจีน-ไทย</p>
-              </div>
-              <div className="bg-gray-100 p-2 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-                <ArrowRight size={20} color="black" />
-              </div>
+      <section id="services" className="section-pad">
+        <div className="site-container">
+          <div className="section-heading heading-split">
+            <div>
+              <h2>
+                ทุกเรื่องนำเข้า
+                <br />
+                <span className="text-brand">ให้ PR Cargo ดูแล</span>
+              </h2>
+              <p>
+                บริการขนส่งนำเข้าสินค้าจีน–ไทย ครบวงจร
+                <br />
+                สำหรับพ่อค้าแม่ค้าออนไลน์และธุรกิจทุกขนาด
+              </p>
+            </div>
+            <Link href="/pr-cargo" className="text-link">
+              ดูบริการและอัตราค่าขนส่ง
+              <ArrowRight size={18} />
             </Link>
+          </div>
+          <div className="cargo-services">
+            {cargoServices.map(({ image, title, text }) => (
+              <article key={title} className="cargo-service">
+                <div className="service-art">
+                  <Image
+                    src={image}
+                    alt=""
+                    width={190}
+                    height={160}
+                    sizes="190px"
+                  />
+                </div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <Link
+                  href="/pr-cargo"
+                  className="service-more"
+                  aria-label={`รายละเอียด${title}`}
+                >
+                  <ArrowUpRight size={20} />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      <section id="about" className="section-pad section-soft">
+        <div className="site-container confidence-grid">
+          <div className="confidence-art">
+            <Image
+              src={MascotLaptop}
+              alt="มาสคอต PR Cargo พร้อมดูแลและติดตามสินค้าของคุณ"
+              width={430}
+              height={430}
+              sizes="(max-width: 760px) 80vw, 34vw"
+            />
+            <div className="confidence-caption">
+              ดูแลใส่ใจ ทุกขั้นตอนการนำเข้า
+            </div>
+          </div>
+          <div className="confidence-copy">
+            <h2>
+              มากกว่าการขนส่ง
+              <br />
+              คือความใส่ใจในธุรกิจคุณ
+            </h2>
+            <p className="section-intro">ทำไมต้องนำเข้ากับ PR Cargo?</p>
+            <div className="advantage-list">
+              {advantages.map(({ icon: Icon, title, text }) => (
+                <div key={title}>
+                  <Icon size={24} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <Link href="/pr-cargo/#rates" className="text-link">
+              ดูอัตราค่าบริการ
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section id="travel" className="section-pad travel-section">
+        <div className="site-container">
+          <div className="travel-intro">
+            <div>
+              <h2>
+                เปิดโลกธุรกิจ
+                <br />
+                และการเดินทางกับ <span className="text-brand">PR Travel</span>
+              </h2>
+              <p>
+                บริการท่องเที่ยวและดูงาน โดยทีมงานมืออาชีพ
+                <br />
+                ที่เข้าใจทุกความต้องการของคุณ
+              </p>
+            </div>
             <a
-              href="https://prgb-travel-group.vercel.app"
+              href={TRAVEL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative w-full sm:w-1/2 bg-primary hover:bg-primary-hover p-6 rounded-xl shadow-2xl transition-all duration-300 transform hover:-translate-y-1 text-left flex items-center justify-between text-white border-l-4 border-white/30"
+              className="button button-outline"
             >
-              <div>
-                <div className="flex items-center gap-3 mb-1">
-                  <div className="w-10 h-10 rounded-full overflow-hidden border border-white/20 shadow-sm flex-shrink-0">
-                    <img src={LogoTravel.src} alt="PR Travel Logo" className="w-full h-full object-cover" />
+              ดูโปรแกรมทัวร์ทั้งหมด
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+          <div className="travel-layout">
+            <div className="travel-picture">
+              <Image
+                src={TravelScene}
+                alt="เส้นทางขนส่งจีน–ไทยและประสบการณ์ท่องเที่ยวประเทศจีน"
+                fill
+                sizes="(max-width: 760px) 90vw, 45vw"
+              />
+              <div className="travel-picture-caption">
+                <MapPin size={20} />
+                <span>
+                  China & Beyond
+                  <small>
+                    เชี่ยวชาญเส้นทางจีน เข้าถึงแหล่งค้าส่ง
+                    <br />
+                    และสถานที่ท่องเที่ยว Unseen
+                  </small>
+                </span>
+              </div>
+            </div>
+            <div className="travel-service-list">
+              {travelServices.map(({ icon: Icon, title, text }) => (
+                <div key={title}>
+                  <Icon size={23} />
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
                   </div>
-                  <span className="font-bold text-xl">PR TRAVEL</span>
                 </div>
-                <p className="text-sm text-white/90">บริการทัวร์และดูงานครบวงจร</p>
-              </div>
-              <div className="bg-white/20 p-2 rounded-full group-hover:bg-white group-hover:text-primary transition-colors">
-                <ArrowRight size={20} />
-              </div>
+              ))}
+            </div>
+          </div>
+          <div className="travel-promise">
+            <div>
+              <h3>เพื่อนคู่คิดในการเดินทางและธุรกิจ</h3>
+              <p>
+                ทีมงานมีความเชี่ยวชาญในพื้นที่จริง พร้อมดูแลคุณตลอดการเดินทาง
+              </p>
+            </div>
+            <ul>
+              {[
+                "ประสบการณ์จริง · เชี่ยวชาญเส้นทางจีน",
+                "บริการ VIP · ดูแลตลอดทริป",
+                "Business Matching · ต่อยอดธุรกิจ",
+                "Custom Program · ออกแบบได้ตามใจ",
+              ].map((text) => (
+                <li key={text}>
+                  <Check size={16} />
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="travel-close">
+            <p>มีไอเดียทริปในใจ แต่ยังไม่รู้จะเริ่มอย่างไร?</p>
+            <a
+              className="text-link"
+              href={TRAVEL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ให้ทีมงาน PRGB ช่วยออกแบบทริปให้คุณ
+              <ArrowUpRight size={18} />
             </a>
           </div>
         </div>
-      </header>
+      </section>
 
-      {/* SECTION 2: PR CARGO - HIGHLIGHTS */}
-      <section className="py-20 bg-soft-bg relative z-10">
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl">
-          <div className="text-center mb-16">
-            <span className="inline-block py-1 px-3 rounded-full bg-red-100 text-primary text-sm font-bold mb-4">
-              IMPORT SERVICES
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-[#1F2937] mb-4">
-              บริการขนส่งนำเข้าสินค้า <span className="text-primary whitespace-nowrap">PR CARGO</span>
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              บริการนำเข้าสินค้าจีน-ไทย ครบวงจร อันดับ 1 สำหรับพ่อค้าแม่ค้าออนไลน์และธุรกิจทุกขนาด
+      <section id="updates" className="section-pad section-soft">
+        <div className="site-container">
+          <div className="section-heading heading-split">
+            <div>
+              <h2>
+                อัปเดตบรรยากาศจริง
+                <br />
+                <span className="text-brand">ผ่าน TikTok ของเรา</span>
+              </h2>
+              <p>ชมผลงาน การขนส่งจริง และประสบการณ์จากลูกค้า</p>
+            </div>
+            <a
+              href={TIKTOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+            >
+              ดูวิดีโอทั้งหมด
+              <ArrowUpRight size={18} />
+            </a>
+          </div>
+          <div className="social-grid">
+            {videos.map(({ id, type }) => (
+              <TikTokPost key={id} id={id} type={type} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-banner">
+        <div className="site-container contact-banner-inner">
+          <div>
+            <h2>พร้อมยกระดับธุรกิจของคุณหรือยัง?</h2>
+            <p>
+              ปรึกษาเราเรื่องการนำเข้าและการเดินทาง ให้ทุกก้าวของคุณง่ายขึ้น
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto mb-16">
-            {/* Cargo Card 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
-              <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
-              <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Image src={IconTransport} alt="Transport Icon" width={150} height={150} className="object-contain" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">ขนส่งด่วน ทางรถ/เรือ</h3>
-              <p className="text-[#1F2937] opacity-80">
-                บริการขนส่งสินค้าจากจีนมาไทย มีทั้งทางรถ (3-5 วัน) และทางเรือ (12-15 วัน) ปิดตู้ทุกวัน
-              </p>
-            </div>
-
-            {/* Cargo Card 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
-              <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
-              <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Image src={IconTax} alt="Tax Icon" width={150} height={150} className="object-contain" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">เคลียร์ภาษี แบบเหมา</h3>
-              <p className="text-[#1F2937] opacity-80">
-                หมดกังวลเรื่องภาษีนำเข้า ด้วยบริการเคลียร์ภาษีแบบเหมาจ่าย กิโล/คิว จบในราคาเดียว
-              </p>
-            </div>
-
-            {/* Cargo Card 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all border border-gray-100 text-center flex flex-col items-center group relative overflow-hidden h-full">
-              <div className="absolute top-0 left-0 w-2 h-full bg-primary opacity-0 group-hover:opacity-100 transition-all"></div>
-              <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Image src={IconWarehouse} alt="Warehouse Icon" width={150} height={150} className="object-contain" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2 text-[#1F2937]">โกดังพักสินค้า 2 ประเทศ</h3>
-              <p className="text-[#1F2937] opacity-80">
-                มีจุดรับสินค้าขนาดใหญ่ทั้งที่กวางโจวและกรุงเทพฯ พร้อมระบบติดตามสินค้า
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3: PR CARGO - WHY CHOOSE (CONFIDENCE) */}
-      <section className="py-20 bg-white relative z-10">
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 mx-auto">
-            <div className="w-full md:w-1/2">
-              <h3 className="text-3xl font-bold mb-6 text-[#1F2937]">
-                ทำไมต้องนำเข้ากับ <span className="text-primary whitespace-nowrap">PR CARGO?</span>
-              </h3>
-              <div className="space-y-6">
-                <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-red-100 flex items-center justify-center text-primary">
-                    <Monitor size={32} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1 text-[#1F2937]">ระบบติดตาม Real-time 24 ชม.</h4>
-                    <p className="text-[#1F2937] opacity-80">รู้สถานะสินค้าของคุณทุกขั้นตอน ผ่านระบบออนไลน์ที่ทันสมัยที่สุด</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-red-100 flex items-center justify-center text-primary">
-                    <TrendingUp size={32} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1 text-[#1F2937]">ราคาที่คุ้มค่า สำหรับ SME</h4>
-                    <p className="text-[#1F2937] opacity-80">เราเข้าใจธุรกิจคุณ ด้วยเรทราคาพิเศษที่ช่วยลดต้นทุนและเพิ่มกำไร</p>
-                  </div>
-                </div>
-                <div className="flex gap-6 items-start">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-xl bg-red-100 flex items-center justify-center text-primary">
-                    <ShieldCheck size={32} />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-1 text-[#1F2937]">รับประกันสินค้า ปลอดภัย 100%</h4>
-                    <p className="text-[#1F2937] opacity-80">ดูแลสินค้าของคุณเหมือนของเราเอง</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 text-center">
-                <Link href="/pr-cargo" className="inline-block bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
-                  ดูอัตราค่าบริการ
-                </Link>
-              </div>
-            </div>
-            <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2070&auto=format&fit=crop"
-                alt="PR Cargo Warehouse"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/80 to-transparent p-6">
-                <p className="text-white font-medium text-lg">"ดูแลใส่ใจ ทุกขั้นตอนการนำเข้า"</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: PR TRAVEL - HIGHLIGHTS */}
-      <section className="py-20 bg-gray-900 text-white relative overflow-hidden">
-        {/* Decorative BG pattern */}
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl relative z-10">
-          <div className="text-center mb-16">
-            <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur text-primary border border-primary text-sm font-bold mb-4">
-              TRAVEL & BUSINESS
-            </span>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 max-w-4xl mx-auto">
-              บริการท่องเที่ยวและดูงาน <span className="text-primary">PR TRAVEL</span>
-            </h2>
-            <p className="text-lg text-white/70 max-w-3xl mx-auto relative z-10">
-              เปิดโลกธุรกิจและประสบการณ์ใหม่ ด้วยบริการมืออาชีพที่เข้าใจทุกความต้องการของคุณ
-            </p>
-            {/* Mascot Decoration */}
-            <div className="absolute -right-16 top-6 opacity-20 lg:opacity-100 pointer-events-none animate-bounce-slow hidden xl:block">
-              <Image src={MascotTelescope} alt="Travel Mascot" width={220} height={220} className="object-contain" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
-            {/* Travel Service 1 */}
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors group text-center">
-              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto">
-                <Ticket size={28} className="text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-white">ทัวร์ดูงานแสดงสินค้า</h3>
-              <p className="text-white/90 text-sm">บริการพาทัวร์งานแฟร์ระดับโลก พร้อมให้คำแนะนำตลอดทริป</p>
-            </div>
-
-            {/* Travel Service 2 */}
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors group text-center">
-              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto">
-                <Languages size={28} className="text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-white">ล่ามเจรจาธุรกิจ</h3>
-              <p className="text-white/90 text-sm">สื่อสารอย่างมั่นใจ ด้วยล่ามมืออาชีพช่วยเจรจาการค้าให้คุณได้เปรียบที่สุด</p>
-            </div>
-
-            {/* Travel Service 3 */}
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors group text-center">
-              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto">
-                <Plane size={28} className="text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-white">จองตั๋วและที่พัก</h3>
-              <p className="text-white/90 text-sm">บริการจองตั๋วเครื่องบินและโรงแรมที่พัก ครบจบในที่เดียว ไม่ต้องยุ่งยาก</p>
-            </div>
-
-            {/* Travel Service 4 */}
-            <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors group text-center">
-              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform mx-auto">
-                <Globe size={28} className="text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-white">จัดทริป Private Group</h3>
-              <p className="text-white/90 text-sm">ออกแบบโปรแกรมท่องเที่ยวตามใจคุณ สำหรับครอบครัวหรือกลุ่มเพื่อน</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5: PR TRAVEL - WHY CHOOSE (EXPERIENCE) */}
-      <section className="py-20 bg-soft-bg">
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl">
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 mx-auto">
-            <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop"
-                alt="PR Travel Experience"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-8 left-8 text-white">
-                <div className="flex items-center gap-2 mb-2">
-                  <Map size={24} className="text-primary" />
-                  <span className="font-bold text-lg">China & Beyond</span>
-                </div>
-                <p className="text-sm opacity-90 max-w-xs">เชี่ยวชาญเส้นทางจีน เข้าถึงแหล่งค้าส่งและสถานที่ท่องเที่ยว Unseen</p>
-              </div>
-            </div>
-
-            <div className="w-full md:w-1/2">
-              <h3 className="text-3xl font-bold mb-6 text-[#1F2937]">
-                เดินทางอย่างมืออาชีพกับ <span className="text-primary">PR TRAVEL</span>
-              </h3>
-              <p className="text-[#1F2937] mb-8 leading-relaxed">
-                เราไม่ได้เป็นแค่บริษัททัวร์ แต่เป็นเพื่อนคู่คิดในการเดินทางและธุรกิจของคุณ ทีมงานของเรามีความเชี่ยวชาญในพื้นที่จริง พร้อมดูแลอำนวยความสะดวกให้คุณตลอดการเดินทาง
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-                  <CheckCircle className="text-primary flex-shrink-0" size={24} />
-                  <div>
-                    <h5 className="font-bold text-[#1F2937] text-lg">ประสบการณ์จริง</h5>
-                    <p className="text-sm text-[#1F2937]">ทีมงานเชี่ยวชาญเส้นทางจีน</p>
-                  </div>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-                  <CheckCircle className="text-primary flex-shrink-0" size={24} />
-                  <div>
-                    <h5 className="font-bold text-[#1F2937] text-lg">บริการ VIP</h5>
-                    <p className="text-sm text-[#1F2937]">ดูแลดุจคนพิเศษตลอดทริป</p>
-                  </div>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-                  <CheckCircle className="text-primary flex-shrink-0" size={24} />
-                  <div>
-                    <h5 className="font-bold text-[#1F2937] text-lg">Business Matching</h5>
-                    <p className="text-sm text-[#1F2937]">ต่อยอดธุรกิจได้จริง</p>
-                  </div>
-                </div>
-                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex items-center gap-3">
-                  <CheckCircle className="text-primary flex-shrink-0" size={24} />
-                  <div>
-                    <h5 className="font-bold text-[#1F2937] text-lg">Custom Program</h5>
-                    <p className="text-sm text-[#1F2937]">จัดโปรแกรมได้ตามใจคุณ</p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8 text-center">
-                <a
-                  href="https://prgb-travel-group.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-primary hover:bg-primary-hover text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg"
-                >
-                  ดูโปรแกรมทัวร์ทั้งหมด
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-20 bg-primary text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10"></div>
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl relative z-10">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">พร้อมยกระดับธุรกิจของคุณหรือยัง?</h2>
-          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">ปรึกษาเราวันนี้ เพื่อรับข้อเสนอและบริการที่ดีที่สุดสำหรับการนำเข้าและการเดินทางของคุณ</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg flex items-center justify-center gap-2">
-              ติดต่อเราทันที <ArrowRight size={20} />
+          <div className="banner-actions">
+            <Link href="/contact" className="button button-white">
+              ติดต่อทีมงาน
+              <ArrowRight size={18} />
             </Link>
-            <Link href="#" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors flex items-center justify-center gap-2">
-              <Phone size={20} /> 096-897-8719
-            </Link>
+            <a href={`tel:${PHONE}`} className="banner-phone">
+              <Phone size={18} />
+              {PHONE}
+            </a>
           </div>
-        </div>
-      </section>
-
-      {/* RTB Section - TikTok Embed */}
-      <section className="py-20 bg-soft-bg">
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl">
-          <div className="text-center mb-10">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
-              REAL REVIEWS & EXPERIENCES
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1F2937] mb-6">
-              อัปเดตบรรยากาศจริง <span className="text-primary">ผ่าน TikTok</span>
-            </h2>
-            <p className="text-[#1F2937] max-w-2xl mx-auto mb-10">
-              ชมคลิปวิดีโอผลงาน การขนส่งจริง และรีวิวจากลูกค้าตัวจริงบน TikTok ของเรา
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto">
-            {/* TikTok Video 1 */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
-              <blockquote className="tiktok-embed"
-                cite="https://www.tiktok.com/@korkame19/video/7545742823274892551"
-                data-video-id="7545742823274892551"
-                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
-                <section>
-                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
-                </section>
-              </blockquote>
-            </div>
-
-            {/* TikTok Video 2 */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
-              <blockquote className="tiktok-embed"
-                cite="https://www.tiktok.com/@korkame19/photo/7448006782632381714"
-                data-video-id="7448006782632381714"
-                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
-                <section>
-                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
-                </section>
-              </blockquote>
-            </div>
-
-            {/* TikTok Video 3 */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 relative group flex items-center justify-center">
-              <blockquote className="tiktok-embed"
-                cite="https://www.tiktok.com/@korkame19/video/7582104724971801874"
-                data-video-id="7582104724971801874"
-                style={{ maxWidth: "100%", minWidth: "300px", width: "100%" }}>
-                <section>
-                  <a target="_blank" title="@korkame19" href="https://www.tiktok.com/@korkame19">@korkame19</a>
-                </section>
-              </blockquote>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <Link href="https://www.tiktok.com/@korkame19" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-[#1F2937] border-b-2 border-primary pb-0.5 hover:text-primary transition-colors font-bold">
-              ดูวิดีโอทั้งหมดบน TikTok <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer Keyword Section */}
-      <section className="bg-white py-24 relative overflow-hidden">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
-
-        <div className="container mx-auto px-8 md:px-6 max-w-6xl relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Top Decorative Line */}
-            <div className="flex items-center justify-center gap-4 mb-12">
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-32"></div>
-              <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-32"></div>
-            </div>
-
-            <div className="mb-10 relative inline-block group">
-              {/* Badge with Gradient & Shadow */}
-              <span className="relative z-10 inline-flex items-center gap-2 bg-gradient-to-r from-primary to-primary-hover text-white px-8 py-3 text-lg font-bold rounded-full shadow-lg shadow-red-100 uppercase transform group-hover:scale-105 transition-all duration-300 ring-4 ring-white">
-                PR GLOBAL GROUP
-              </span>
-              {/* Glow underlying effect */}
-              <div className="absolute -inset-1 bg-red-500 blur-lg opacity-20 group-hover:opacity-40 transition-opacity duration-300 rounded-full"></div>
-            </div>
-
-            <h3 className="text-3xl md:text-5xl font-bold text-[#1F2937] leading-normal mb-4">
-              หากคุณมีไอเดียทริปในใจ <span className="text-[#1F2937] font-normal">แต่ยังไม่รู้จะเริ่มอย่างไร</span>
-            </h3>
-            <p className="text-2xl md:text-3xl font-bold text-primary leading-relaxed">
-              ให้ทีมงาน PRGB ช่วยออกแบบทริปให้คุณได้
-            </p>
-
-            {/* Bottom Decorative Line */}
-            <div className="flex items-center justify-center gap-4 mt-12">
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent w-full max-w-sm"></div>
-            </div>
-          </div>
+          <MessageCircle
+            className="banner-decoration"
+            size={155}
+            aria-hidden="true"
+          />
         </div>
       </section>
     </>
